@@ -1,0 +1,12 @@
+{
+  "recommendations": [
+    "ms-vscode.live-server",
+    "dbaeumer.vscode-eslint",
+    "esbenp.prettier-vscode",
+    "stylelint.vscode-stylelint",
+    "usernamehw.errorlens",
+    "formulahendry.auto-rename-tag",
+    "ecmel.vscode-html-css",
+    "xabikos.JavaScriptSnippets"
+  ]
+}

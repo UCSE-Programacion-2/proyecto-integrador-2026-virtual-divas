@@ -1,0 +1,23 @@
+{
+  "extends": [
+    "stylelint-config-standard",
+    "stylelint-config-prettier"
+  ],
+  "rules": {
+    "color-hex-case": "lower",
+    "color-hex-length": "short",
+    "declaration-block-no-duplicate-properties": true,
+    "declaration-block-no-redundant-longhand-properties": true,
+    "declaration-no-important": "warn",
+    "property-no-unknown": true,
+    "selector-type-no-unknown": true,
+    "no-duplicate-selectors": true,
+    "no-empty-source": null
+  },
+  "ignoreFiles": [
+    "**/*.js",
+    "**/node_modules/**",
+    "**/dist/**",
+    "**/build/**"
+  ]
+}
