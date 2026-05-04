@@ -1,6 +1,6 @@
-Tablero de GitHub Projects: [Link a tu tablero]
+Tablero de GitHub Projects: https://github.com/orgs/UCSE-Programacion-2/projects/41/views/1
 
-# [PintuNort / VirtualDivas] - Programación II 2026
+# PintuNort / VirtualDivas - Programación II 2026
 
 ## 👥 Integrantes
 
