@@ -49,4 +49,4 @@
 
 ## 5. Logo
 
--  Logo no disponible — se solicitará al propietario 
+- img/logopintunort.jpg
