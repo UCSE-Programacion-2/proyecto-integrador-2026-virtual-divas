@@ -32,16 +32,16 @@
 ## 4. Fotos del local
 
 ### Exterior / Fachada
-- `` — Vista exterior del local
-- `` — Cartel / identificación del comercio
+- img/afuera.png — Vista exterior del local
+- img/cartel.png — Cartel / identificación del comercio
 
 ### Interior / Zona de atención
-- `` — Mostrador y zona de atención al cliente
-- `` — Estantes con productos
+- img/mostrador.png — Mostrador y zona de atención al cliente
+- img/repisa.png — Estantes con productos
 
 ### Productos
-- `` — Muestra de pinturas disponibles
-- `` — Accesorios (rodillos, pinceles, etc.)
+- img/productos1.png — Muestra de pinturas disponibles
+- 
 
 
 
@@ -49,7 +49,4 @@
 
 ## 5. Logo
 
-- `` — [completar cuando se consiga o diseñe el logo]
-]
-
----
+-  Logo no disponible — se solicitará al propietario 
