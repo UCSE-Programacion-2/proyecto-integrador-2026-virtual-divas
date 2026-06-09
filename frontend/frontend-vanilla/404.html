@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>404 - Página no encontrada | PintuNort</title>
+    <link rel="stylesheet" href="css/styles.css" />
+    <style>
+        .pagina-404 {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        .numero-404 {
+            font-size: 120px;
+            font-weight: 700;
+            color: var(--color-secundario);
+            line-height: 1;
+            margin-bottom: 16px;
+        }
+
+        .titulo-404 {
+            font-size: 28px;
+            font-weight: 600;
+            color: var(--color-texto);
+            margin-bottom: 12px;
+        }
+
+        .descripcion-404 {
+            font-size: 16px;
+            color: var(--color-texto-secundario);
+            max-width: 400px;
+            margin-bottom: 32px;
+        }
+
+        @media (max-width: 480px) {
+            .numero-404 {
+                font-size: 80px;
+            }
+
+            .titulo-404 {
+                font-size: 22px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="pagina-404">
+        <div class="numero-404">404</div>
+        <h1 class="titulo-404">Página no encontrada</h1>
+        <p class="descripcion-404">
+            La página que estás buscando no existe o fue movida.
+        </p>
+        <a href="index.html" class="btn btn-primario">Volver al inicio</a>
+    </div>
+
+</body>
+</html>
