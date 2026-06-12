@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PintuNort</title>
+    <link rel="stylesheet" href="css/styles.css" />
+    <style>
+        /*
+           NAVBAR
+           */
+        .navbar {
+            background-color: var(--color-primario);
+            padding: 16px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .navbar .contenedor {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .navbar-logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--color-blanco);
+        }
+
+        .navbar-logo span {
+            color: var(--color-secundario);
+        }
+
+        .navbar-links {
+            display: flex;
+            gap: 24px;
+            align-items: center;
+        }
+
+        .navbar-links a {
+            color: var(--color-blanco);
+            font-size: 15px;
+            font-weight: 500;
+            padding: 8px 4px;
+            border-bottom: 2px solid transparent;
+        }
+
+        .navbar-links a:hover {
+            border-bottom: 2px solid var(--color-secundario);
+            color: var(--color-secundario);
+        }
+
+        .navbar-carrito {
+            background-color: var(--color-secundario);
+            color: var(--color-blanco) !important;
+            padding: 8px 16px !important;
+            border-radius: var(--border-radius);
+            border-bottom: none !important;
+        }
+
+        .navbar-carrito:hover {
+            background-color: #c73652 !important;
+            border-bottom: none !important;
+        }
+
+        /*
+           FOOTER
+           */
+        .footer {
+            background-color: var(--color-primario);
+            color: var(--color-blanco);
+            padding: 48px 0 24px;
+            margin-top: 60px;
+        }
+
+        .footer-grid {
+            display: flex;
+            gap: 40px;
+            justify-content: space-between;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--color-secundario);
+            margin-bottom: 16px;
+        }
+
+        .footer-col p,
+        .footer-col a {
+            font-size: 14px;
+            color: #aaaaaa;
+            line-height: 2;
+            display: block;
+        }
+
+        .footer-col a:hover {
+            color: var(--color-blanco);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #333;
+            padding-top: 20px;
+            text-align: center;
+            font-size: 13px;
+            color: #aaaaaa;
+        }
+
+        /* 
+           CONTENIDO DE EJEMPLO
+           */
+        .contenido-ejemplo {
+            padding: 60px 0;
+            text-align: center;
+        }
+
+        .contenido-ejemplo h1 {
+            font-size: 28px;
+            color: var(--color-texto);
+        }
+
+        /* 
+           RESPONSIVE
+           */
+        @media (max-width: 768px) {
+            .navbar .contenedor {
+                flex-direction: column;
+                gap: 16px;
+            }
+
+            .navbar-links {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 12px;
+            }
+
+            .footer-grid {
+                flex-direction: column;
+                gap: 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    
+    <nav class="navbar">
+        <div class="contenedor">
+            <a href="index.html" class="navbar-logo">Pintu<span>Nort</span></a>
+            <ul class="navbar-links">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="catalogo.html">Catálogo</a></li>
+                <li><a href="carrito.html" class="navbar-carrito">🛒 Carrito</a></li>
+            </ul>
+        </div>
+    </nav>
+
+
+    <main>
+        <div class="contenedor contenido-ejemplo">
+            <h1>Contenido de la página va acá</h1>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="contenedor">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>PintuNort</h4>
+                    <p>Tu pinturería de confianza en Jujuy.</p>
+                    <p>Cochinoca 885, San Salvador de Jujuy</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Navegación</h4>
+                    <a href="index.html">Inicio</a>
+                    <a href="catalogo.html">Catálogo</a>
+                    <a href="carrito.html">Carrito</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Contacto</h4>
+                    <p>📍 Cochinoca 885, SSJ</p>
+                    <p>📞 (0388) 000-0000</p>
+                    <p>✉️ contacto@pintunort.com</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2026 PintuNort — Todos los derechos reservados</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
