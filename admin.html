@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PintuNort - Panel de Administración</title>
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="css/admin.css" />
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="navbar-brand">Pintu<span>Nort</span></a>
+            <ul class="navbar-menu">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="catalogo.html">Catálogo</a></li>
+                <li><a href="admin.html" class="active">Admin</a></li>
+                <li><a href="carrito.html" class="navbar-cart">🛒 Carrito</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <header class="admin-hero">
+        <div class="container">
+            <h1>Panel de <span>Administración</span></h1>
+            <p>Gestioná visualmente los productos publicados en el catálogo de PintuNort.</p>
+        </div>
+    </header>
+
+    <main class="admin-panel">
+        <div class="container admin-layout">
+            <section class="card product-form-card" aria-labelledby="create-product-title">
+                <h2 class="admin-section-title" id="create-product-title">Crear Producto</h2>
+                <p class="admin-section-description">Formulario visual para cargar datos de un nuevo producto.</p>
+
+                <form class="product-form" action="#" method="post">
+                    <div class="form-group">
+                        <label for="product-name-input">Nombre</label>
+                        <input type="text" id="product-name-input" name="product-name" placeholder="Latex Interior" />
+                    </div>
+
+                    <div class="form-group">
+                        <label for="product-brand-input">Marca</label>
+                        <input type="text" id="product-brand-input" name="product-brand" placeholder="Polarcrin" />
+                    </div>
+
+                    <div class="form-group">
+                        <label for="product-category-input">Categoría</label>
+                        <select id="product-category-input" name="product-category">
+                            <option>Pintura Interior</option>
+                            <option>Pintura Exterior</option>
+                            <option>Impermeabilizantes</option>
+                            <option>Accesorios</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="product-price-input">Precio</label>
+                        <input type="text" id="product-price-input" name="product-price" placeholder="$15.200" />
+                    </div>
+
+                    <div class="form-group">
+                        <label for="product-stock-input">Stock</label>
+                        <input type="number" id="product-stock-input" name="product-stock" placeholder="24" />
+                    </div>
+
+                    <div class="form-group">
+                        <label for="product-image-input">Imagen</label>
+                        <input type="text" id="product-image-input" name="product-image" placeholder="assets/producto.png" />
+                    </div>
+
+                    <div class="form-group form-group-full">
+                        <label for="product-description-input">Descripción</label>
+                        <textarea id="product-description-input" name="product-description" placeholder="Descripción breve del producto"></textarea>
+                    </div>
+
+                    <div class="form-group form-group-full">
+                        <button type="button" class="button button-primary">Crear Producto</button>
+                    </div>
+                </form>
+            </section>
+
+            <section class="card products-panel" aria-labelledby="products-list-title">
+                <div class="products-header">
+                    <div>
+                        <h2 class="admin-section-title" id="products-list-title">Productos listados</h2>
+                        <p class="admin-section-description">Tabla visual de productos cargados en el sistema.</p>
+                    </div>
+                    <span class="products-count">6 productos</span>
+                </div>
+
+                <div class="table-wrapper">
+                    <table class="products-table">
+                        <thead>
+                            <tr>
+                                <th>Producto</th>
+                                <th>Categoría</th>
+                                <th>Precio</th>
+                                <th>Stock</th>
+                                <th>Estado</th>
+                                <th>Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td data-label="Producto">
+                                    <div class="product-cell">
+                                        <img class="product-thumb" src="assets/membrana.png" alt="Membrana en Pasta" />
+                                        <div>
+                                            <p class="product-name">Membrana en Pasta</p>
+                                            <p class="product-brand">Polacrin</p>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td data-label="Categoría">Impermeabilizantes</td>
+                                <td data-label="Precio">$12.500</td>
+                                <td data-label="Stock">18</td>
+                                <td data-label="Estado"><span class="status-badge status-active">Activo</span></td>
+                                <td data-label="Acciones">
+                                    <div class="table-actions">
+                                        <button type="button" class="button button-secondary button-small">Editar</button>
+                                        <button type="button" class="button button-danger button-small">Eliminar</button>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td data-label="Producto">
+                                    <div class="product-cell">
+                                        <img class="product-thumb" src="assets/Pinturavalen.png" alt="Microcemento en Pasta" />
+                                        <div>
+                                            <p class="product-name">Microcemento en Pasta</p>
+                                            <p class="product-brand">Valen</p>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td data-label="Categoría">Revestimientos</td>
+                                <td data-label="Precio">$8.900</td>
+                                <td data-label="Stock">9</td>
+                                <td data-label="Estado"><span class="status-badge status-low">Stock bajo</span></td>
+                                <td data-label="Acciones">
+                                    <div class="table-actions">
+                                        <button type="button" class="button button-secondary button-small">Editar</button>
+                                        <button type="button" class="button button-danger button-small">Eliminar</button>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td data-label="Producto">
+                                    <div class="product-cell">
+                                        <img class="product-thumb" src="assets/latexinterior.png" alt="Latex Interior" />
+                                        <div>
+                                            <p class="product-name">Latex Interior</p>
+                                            <p class="product-brand">Polarcrin</p>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td data-label="Categoría">Pintura Interior</td>
+                                <td data-label="Precio">$15.200</td>
+                                <td data-label="Stock">24</td>
+                                <td data-label="Estado"><span class="status-badge status-active">Activo</span></td>
+                                <td data-label="Acciones">
+                                    <div class="table-actions">
+                                        <button type="button" class="button button-secondary button-small">Editar</button>
+                                        <button type="button" class="button button-danger button-small">Eliminar</button>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td data-label="Producto">
+                                    <div class="product-cell">
+                                        <img class="product-thumb" src="assets/Tonplast.png" alt="Entonador Universal" />
+                                        <div>
+                                            <p class="product-name">Entonador Universal</p>
+                                            <p class="product-brand">Sinteplast</p>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td data-label="Categoría">Accesorios</td>
+                                <td data-label="Precio">$2.400</td>
+                                <td data-label="Stock">36</td>
+                                <td data-label="Estado"><span class="status-badge status-active">Activo</span></td>
+                                <td data-label="Acciones">
+                                    <div class="table-actions">
+                                        <button type="button" class="button button-secondary button-small">Editar</button>
+                                        <button type="button" class="button button-danger button-small">Eliminar</button>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td data-label="Producto">
+                                    <div class="product-cell">
+                                        <img class="product-thumb" src="assets/Pintunort.png" alt="Pintura Exterior Premium" />
+                                        <div>
+                                            <p class="product-name">Pintura Exterior Premium</p>
+                                            <p class="product-brand">PintuNort</p>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td data-label="Categoría">Pintura Exterior</td>
+                                <td data-label="Precio">$18.700</td>
+                                <td data-label="Stock">14</td>
+                                <td data-label="Estado"><span class="status-badge status-active">Activo</span></td>
+                                <td data-label="Acciones">
+                                    <div class="table-actions">
+                                        <button type="button" class="button button-secondary button-small">Editar</button>
+                                        <button type="button" class="button button-danger button-small">Eliminar</button>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td data-label="Producto">
+                                    <div class="product-cell">
+                                        <img class="product-thumb" src="assets/latexinterior.png" alt="Latex Antihongo" />
+                                        <div>
+                                            <p class="product-name">Latex Antihongo</p>
+                                            <p class="product-brand">Polarcrin</p>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td data-label="Categoría">Pintura Interior</td>
+                                <td data-label="Precio">$16.300</td>
+                                <td data-label="Stock">7</td>
+                                <td data-label="Estado"><span class="status-badge status-low">Stock bajo</span></td>
+                                <td data-label="Acciones">
+                                    <div class="table-actions">
+                                        <button type="button" class="button button-secondary button-small">Editar</button>
+                                        <button type="button" class="button button-danger button-small">Eliminar</button>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <h4>PintuNort</h4>
+                    <p>Tu pinturería de confianza en Jujuy.</p>
+                    <p>Cochinoca 885, San Salvador de Jujuy</p>
+                </div>
+                <div class="footer-column">
+                    <h4>Navegación</h4>
+                    <a href="index.html">Inicio</a>
+                    <a href="catalogo.html">Catálogo</a>
+                    <a href="admin.html">Admin</a>
+                    <a href="carrito.html">Carrito</a>
+                </div>
+                <div class="footer-column">
+                    <h4>Contacto</h4>
+                    <p>📍 Cochinoca 885, SSJ</p>
+                    <p>📞 (0388) 000-0000</p>
+                    <p>✉️ contacto@pintunort.com</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2026 PintuNort — Todos los derechos reservados</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
