@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PintuNort - Inicio</title>
+    <link rel="stylesheet" href="css/styles.css" />
+    <style>
+        .navbar {
+            background-color: var(--color-primario);
+            padding: 16px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .navbar .contenedor {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .navbar-logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--color-blanco);
+        }
+
+        .navbar-logo span {
+            color: var(--color-secundario);
+        }
+
+        .navbar-links {
+            display: flex;
+            gap: 24px;
+            align-items: center;
+        }
+
+        .navbar-links a {
+            color: var(--color-blanco);
+            font-size: 15px;
+            font-weight: 500;
+            padding: 8px 4px;
+            border-bottom: 2px solid transparent;
+        }
+
+        .navbar-links a:hover {
+            border-bottom: 2px solid var(--color-secundario);
+            color: var(--color-secundario);
+        }
+
+        .navbar-carrito {
+            background-color: var(--color-secundario);
+            color: var(--color-blanco) !important;
+            padding: 8px 16px !important;
+            border-radius: var(--border-radius);
+            border-bottom: none !important;
+        }
+
+        .navbar-carrito:hover {
+            background-color: #c73652 !important;
+            border-bottom: none !important;
+        }
+
+        .banner {
+            background-color: var(--color-primario);
+            color: var(--color-blanco);
+            padding: 80px 0;
+        }
+
+        .banner .contenedor {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 40px;
+        }
+
+        .banner-texto h1 {
+            font-size: 42px;
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 16px;
+        }
+
+        .banner-texto h1 span {
+            color: var(--color-secundario);
+        }
+
+        .banner-texto p {
+            font-size: 18px;
+            color: #cccccc;
+            margin-bottom: 32px;
+            max-width: 480px;
+        }
+
+        .banner-imagen {
+            width: 420px;
+            height: 280px;
+            background-color: #2a2a4a;
+            border-radius: var(--border-radius);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #666;
+            font-size: 14px;
+            flex-shrink: 0;
+            overflow: hidden;
+        }
+
+        .banner-imagen img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: var(--border-radius);
+        }
+
+        .categorias {
+            padding: 60px 0;
+            background-color: var(--color-blanco);
+        }
+
+        .seccion-titulo {
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--color-texto);
+            margin-bottom: 32px;
+            text-align: center;
+        }
+
+        .categorias-grid {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .categoria-card {
+            background-color: var(--color-fondo);
+            border: 1px solid var(--color-borde);
+            border-radius: var(--border-radius);
+            padding: 24px;
+            text-align: center;
+            width: 200px;
+            cursor: pointer;
+        }
+
+        .categoria-card:hover {
+            border-color: var(--color-secundario);
+            box-shadow: var(--sombra);
+        }
+
+        .categoria-icono {
+            font-size: 40px;
+            margin-bottom: 12px;
+        }
+
+        .categoria-card h3 {
+            font-size: 15px;
+            font-weight: 600;
+            color: var(--color-texto);
+        }
+
+        .destacados {
+            padding: 60px 0;
+            background-color: var(--color-fondo);
+        }
+
+        .productos-grid {
+            display: flex;
+            gap: 24px;
+            flex-wrap: wrap;
+        }
+
+        .producto-card {
+            background-color: var(--color-blanco);
+            border: 1px solid var(--color-borde);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            width: calc(25% - 18px);
+            box-shadow: var(--sombra);
+        }
+
+        .producto-card:hover {
+            box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+        }
+
+        .producto-imagen {
+            width: 100%;
+            height: 180px;
+            background-color: #e8e8e8;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #999;
+            font-size: 13px;
+            overflow: hidden;
+        }
+
+        .producto-imagen img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .producto-info {
+            padding: 16px;
+        }
+
+        .producto-marca {
+            font-size: 12px;
+            color: var(--color-texto-secundario);
+            text-transform: uppercase;
+            margin-bottom: 4px;
+        }
+
+        .producto-nombre {
+            font-size: 15px;
+            font-weight: 600;
+            color: var(--color-texto);
+            margin-bottom: 8px;
+        }
+
+        .producto-precio {
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--color-secundario);
+            margin-bottom: 12px;
+        }
+
+        .producto-card .btn {
+            width: 100%;
+            padding: 10px;
+            font-size: 14px;
+        }
+
+        .footer {
+            background-color: var(--color-primario);
+            color: var(--color-blanco);
+            padding: 48px 0 24px;
+            margin-top: 60px;
+        }
+
+        .footer-grid {
+            display: flex;
+            gap: 40px;
+            justify-content: space-between;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--color-secundario);
+            margin-bottom: 16px;
+        }
+
+        .footer-col p,
+        .footer-col a {
+            font-size: 14px;
+            color: #aaaaaa;
+            line-height: 2;
+            display: block;
+        }
+
+        .footer-col a:hover {
+            color: var(--color-blanco);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #333;
+            padding-top: 20px;
+            text-align: center;
+            font-size: 13px;
+            color: #aaaaaa;
+        }
+
+        @media (max-width: 768px) {
+            .navbar .contenedor {
+                flex-direction: column;
+                gap: 16px;
+            }
+
+            .navbar-links {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 12px;
+            }
+
+            .banner .contenedor {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .banner-texto h1 {
+                font-size: 28px;
+            }
+
+            .banner-imagen {
+                width: 100%;
+                height: 200px;
+            }
+
+            .categorias-grid {
+                flex-wrap: wrap;
+            }
+
+            .productos-grid {
+                justify-content: center;
+            }
+
+            .producto-card {
+                width: calc(50% - 12px);
+            }
+
+            .footer-grid {
+                flex-direction: column;
+                gap: 24px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .producto-card {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="contenedor">
+            <a href="index.html" class="navbar-logo">Pintu<span>Nort</span></a>
+            <ul class="navbar-links">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="catalogo.html">Catálogo</a></li>
+                <li><a href="carrito.html" class="navbar-carrito">🛒 Carrito</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="banner">
+        <div class="contenedor">
+            <div class="banner-texto">
+                <h1>Tu pinturería <span>de confianza</span> en Jujuy</h1>
+                <p>Encontrá pinturas, esmaltes y accesorios para tu hogar o proyecto. Calidad garantizada.</p>
+                <a href="catalogo.html" class="btn btn-primario">Ver catálogo</a>
+            </div>
+            <div class="banner-imagen">
+               <img src="assets/Pintunort.png" alt="Local">
+            </div>
+        </div>
+    </section>
+
+    <section class="categorias">
+        <div class="contenedor">
+            <h2 class="seccion-titulo">Categorías</h2>
+            <div class="categorias-grid">
+                <div class="categoria-card">
+                    <div class="categoria-icono">🏠</div>
+                    <h3>Pintura Interior</h3>
+                </div>
+                <div class="categoria-card">
+                    <div class="categoria-icono">🏗️</div>
+                    <h3>Pintura Exterior</h3>
+                </div>
+                <div class="categoria-card">
+                    <div class="categoria-icono">✨</div>
+                    <h3>Esmaltes</h3>
+                </div>
+                <div class="categoria-card">
+                    <div class="categoria-icono">🖌️</div>
+                    <h3>Accesorios</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="destacados">
+        <div class="contenedor">
+            <h2 class="seccion-titulo">Productos Destacados</h2>
+            <div class="productos-grid">
+
+                <div class="producto-card">
+                    <div class="producto-imagen">
+                        <img src="assets/membrana.png" alt="Membrana">
+                    </div>
+                    <div class="producto-info">
+                        <p class="producto-marca">Polacrin</p>
+                        <h3 class="producto-nombre">Membrana en Pasta</h3>
+                        <p class="producto-precio">$12.500</p>
+                        <a href="detalle.html" class="btn btn-primario">Ver detalle</a>
+                    </div>
+                </div>
+
+                <div class="producto-card">
+                    <div class="producto-imagen">
+                        <img src="assets/Pinturavalen.png" alt="PinturaValen">
+                    </div>
+                    <div class="producto-info">
+                        <p class="producto-marca">Valen</p>
+                        <h3 class="producto-nombre">Microcemento en Pasta</h3>
+                        <p class="producto-precio">$8.900</p>
+                        <a href="detalle.html" class="btn btn-primario">Ver detalle</a>
+                    </div>
+                </div>
+
+                <div class="producto-card">
+                    <div class="producto-imagen">
+                        <img src="assets/latexinterior.png" alt="Latex Interior">
+                    </div>
+                    <div class="producto-info">
+                        <p class="producto-marca">Polarcrin</p>
+                        <h3 class="producto-nombre">Latex Interior</h3>
+                        <p class="producto-precio">$15.200</p>
+                        <a href="detalle.html" class="btn btn-primario">Ver detalle</a>
+                    </div>
+                </div>
+
+                <div class="producto-card">
+                    <div class="producto-imagen">
+                        <img src="assets/Tonplast.png" alt="Entonador">
+                    </div>
+                    <div class="producto-info">
+                        <p class="producto-marca">Sinteplast</p>
+                        <h3 class="producto-nombre">Entonador Universal</h3>
+                        <p class="producto-precio">$2.400</p>
+                        <a href="detalle.html" class="btn btn-primario">Ver detalle</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="contenedor">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>PintuNort</h4>
+                    <p>Tu pinturería de confianza en Jujuy.</p>
+                    <p>Cochinoca 885, San Salvador de Jujuy</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Navegación</h4>
+                    <a href="index.html">Inicio</a>
+                    <a href="catalogo.html">Catálogo</a>
+                    <a href="carrito.html">Carrito</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Contacto</h4>
+                    <p>📍 Cochinoca 885, SSJ</p>
+                    <p>📞 (0388) 000-0000</p>
+                    <p>✉️ contacto@pintunort.com</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2026 PintuNort — Todos los derechos reservados</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
