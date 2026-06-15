@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Catálogo de Productos | PintuNort</title>
+  <link rel="stylesheet" href="src/styles/variables.css" />
+  <link rel="stylesheet" href="css/styles.css" />
+  <style>
+    .seccion-catalogo { padding: var(--spacing-xl) 0; }
+    .titulo-seccion { font-size: var(--font-size-xl); margin-bottom: var(--spacing-lg); text-align: center; }
+    .grilla-productos { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: var(--spacing-lg); }
+    .tarjeta-producto { background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--border-radius-md); padding: var(--spacing-md); box-shadow: var(--shadow-sm); display: flex; flex-direction: column; justify-content: space-between; }
+    .imagen-frasco { font-size: 4rem; text-align: center; margin-bottom: var(--spacing-sm); }
+    .marca-badge { font-size: var(--font-size-xs); color: var(--color-secondary); font-weight: var(--font-weight-bold); text-transform: uppercase; }
+    .nombre-prod { font-size: var(--font-size-md); margin: var(--spacing-xs) 0; }
+    .precio-prod { font-size: var(--font-size-lg); font-weight: var(--font-weight-bold); color: var(--color-primary); }
+    .info-meta { font-size: var(--font-size-sm); color: var(--color-text-muted); margin-bottom: var(--spacing-md); }
+  </style>
+</head>
+<body>
+  <main class="contenedor seccion-catalogo">
+    <h1 class="titulo-seccion">Nuestro Catálogo de Pinturas</h1>
+    <div class="grilla-productos">
+      <div class="tarjeta-producto">
+        <div class="imagen-frasco">🎨</div>
+        <span class="marca-badge">Alba</span>
+        <h3 class="nombre-prod">Látex Interior Premium</h3>
+        <p class="info-meta">Presentación: 20 Litros | Color: Blanco</p>
+        <div class="precio-prod">$45.000</div>
+        <a href="detalle.html" class="btn btn-primario" style="margin-top: var(--spacing-sm);">Ver Detalles</a>
+      </div>
+      <div class="tarjeta-producto">
+        <div class="imagen-frasco">🖌️</div>
+        <span class="marca-badge">Tersuave</span>
+        <h3 class="nombre-prod">Esmalte Sintético Brillante</h3>
+        <p class="info-meta">Presentación: 4 Litros | Color: Negro</p>
+        <div class="precio-prod">$18.500</div>
+        <a href="detalle.html" class="btn btn-primario" style="margin-top: var(--spacing-sm);">Ver Detalles</a>
+      </div>
+    </div>
+  </main>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Detalle de Producto | PintuNort</title>
+  <link rel="stylesheet" href="src/styles/variables.css" />
+  <link rel="stylesheet" href="css/styles.css" />
+  <style>
+    .detalle-layout { display: flex; gap: var(--spacing-xl); padding: var(--spacing-xl) 0; margin-top: var(--spacing-xl); }
+    .detalle-visual { flex: 1; background: var(--color-surface); border-radius: var(--border-radius-lg); display: flex; align-items: center; justify-content: center; font-size: 8rem; min-height: 350px; border: 1px solid var(--color-border); }
+    .detalle-info { flex: 1; display: flex; flex-direction: column; justify-content: center; }
+    .marca-detalle { color: var(--color-secondary); font-weight: var(--font-weight-bold); }
+    .precio-detalle { font-size: var(--font-size-xl); color: var(--color-primary); font-weight: var(--font-weight-bold); margin: var(--spacing-sm) 0; }
+    .meta-item { margin-bottom: var(--spacing-xs); font-size: var(--font-size-base); }
+    .stock-badge { display: inline-block; padding: var(--spacing-xs) var(--spacing-sm); background-color: #e8f5e9; color: var(--color-success); border-radius: var(--border-radius-sm); font-weight: var(--font-weight-medium); width: fit-content; }
+    @media (max-width: 768px) { .detalle-layout { flex-direction: column; } }
+  </style>
+</head>
+<body>
+  <div class="contenedor detalle-layout">
+    <div class="detalle-visual">🎨</div>
+    <div class="detalle-info">
+      <span class="marca-detalle">Alba</span>
+      <h2>Látex Interior Premium</h2>
+      <div class="precio-detalle">$45.000</div>
+      <p class="meta-item"><strong>Color:</strong> Blanco Intenso</p>
+      <p class="meta-item"><strong>Capacidad:</strong> 20 Litros</p>
+      <p class="meta-item" style="margin-bottom: var(--spacing-md);">Pintura al agua de alta resistencia, ideal para proteger y embellecer muros interiores con un acabado mate perfecto.</p>
+      <span class="stock-badge">Stock Disponible: 15 unidades</span>
+      <button class="btn btn-primario" style="margin-top: var(--spacing-lg); max-width: 250px;">Añadir al Carrito</button>
+    </div>
+  </div>
+</body>
+</html>
