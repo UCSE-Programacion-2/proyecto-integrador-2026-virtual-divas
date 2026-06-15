@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PintuNort - Detalle de Producto</title>
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="css/detalle.css" />
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="container">
+        <a href="index.html" class="navbar-brand">Pintu<span>Nort</span></a>
+        <ul class="navbar-menu">
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="catalogo.html" class="active">Catálogo</a></li>
+          <li><a href="admin.html">Admin</a></li>
+          <li><a href="carrito.html" class="navbar-cart">🛒 Carrito</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <header class="detail-hero">
+      <div class="container">
+        <p class="detail-kicker">Detalle del producto</p>
+        <h1>Latex Interior <span class="detail-hero-highlight">Polarcrin</span></h1>
+        <p class="detail-hero-description">
+          Conocé sus características principales y agregalo al carrito para preparar tu pedido.
+        </p>
+      </div>
+    </header>
+
+    <main class="detail-page">
+      <div class="container detail-layout">
+        <section class="card product-detail-card" aria-labelledby="product-detail-title">
+          <div class="product-gallery">
+            <div class="product-main-image">
+              <img src="assets/latexinterior.png" alt="Latex Interior Polarcrin" />
+            </div>
+            <div class="product-thumbnails" aria-label="Vistas del producto">
+              <button type="button" class="product-thumbnail active">
+                <img src="assets/latexinterior.png" alt="Vista frontal del Latex Interior" />
+              </button>
+              <button type="button" class="product-thumbnail">
+                <img src="assets/Pintunort.png" alt="Referencia de pinturería PintuNort" />
+              </button>
+              <button type="button" class="product-thumbnail">
+                <img src="assets/Pinturavalen.png" alt="Producto relacionado" />
+              </button>
+            </div>
+          </div>
+
+          <div class="product-detail-info">
+            <span class="product-category">Pintura interior</span>
+            <h2 id="product-detail-title">Latex Interior</h2>
+            <p class="product-brand-detail">Polarcrin</p>
+            <p class="product-description">
+              Pintura latex para interiores con buena cobertura, terminación mate y aplicación
+              sencilla. Ideal para renovar paredes y cielorrasos en ambientes de uso diario.
+            </p>
+
+            <div class="product-price-box">
+              <span class="product-price-label">Precio final</span>
+              <strong>$15.200</strong>
+            </div>
+
+            <div class="product-actions">
+              <button type="button" class="button button-primary">Agregar al carrito</button>
+              <a href="index.html" class="button button-secondary">Volver al inicio</a>
+            </div>
+          </div>
+        </section>
+
+        <aside class="card product-summary" aria-labelledby="product-summary-title">
+          <h2 id="product-summary-title">Información rápida</h2>
+
+          <div class="summary-list">
+            <div class="summary-item">
+              <span class="summary-label">Disponibilidad</span>
+              <strong>24 unidades</strong>
+            </div>
+            <div class="summary-item">
+              <span class="summary-label">Presentación</span>
+              <strong>20 litros</strong>
+            </div>
+            <div class="summary-item">
+              <span class="summary-label">Terminación</span>
+              <strong>Mate</strong>
+            </div>
+            <div class="summary-item">
+              <span class="summary-label">Rendimiento</span>
+              <strong>10 a 12 m² por litro</strong>
+            </div>
+          </div>
+
+          <div class="delivery-card">
+            <h3>Retiro o entrega</h3>
+            <p class="delivery-card-description">
+              Podés retirar por Cochinoca 885 o coordinar envío dentro de San Salvador de Jujuy.
+            </p>
+          </div>
+        </aside>
+      </div>
+    </main>
+
+    <section class="related-products" aria-labelledby="related-products-title">
+      <div class="container">
+        <div class="section-heading">
+          <h2 id="related-products-title">Productos relacionados</h2>
+          <p class="section-description">Otras opciones para completar tu compra.</p>
+        </div>
+
+        <div class="related-grid">
+          <article class="card related-card">
+            <img src="assets/membrana.png" alt="Membrana en Pasta" />
+            <div>
+              <p class="related-brand">Polacrin</p>
+              <h3>Membrana en Pasta</h3>
+              <strong>$12.500</strong>
+            </div>
+          </article>
+
+          <article class="card related-card">
+            <img src="assets/Tonplast.png" alt="Entonador Universal" />
+            <div>
+              <p class="related-brand">Sinteplast</p>
+              <h3>Entonador Universal</h3>
+              <strong>$2.400</strong>
+            </div>
+          </article>
+
+          <article class="card related-card">
+            <img src="assets/Pintunort.png" alt="Pintura Exterior Premium" />
+            <div>
+              <p class="related-brand">PintuNort</p>
+              <h3>Pintura Exterior Premium</h3>
+              <strong>$18.700</strong>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-column">
+            <h4>PintuNort</h4>
+            <p>Tu pinturería de confianza en Jujuy.</p>
+            <p>Cochinoca 885, San Salvador de Jujuy</p>
+          </div>
+          <div class="footer-column">
+            <h4>Navegación</h4>
+            <a href="index.html">Inicio</a>
+            <a href="catalogo.html">Catálogo</a>
+            <a href="admin.html">Admin</a>
+            <a href="carrito.html">Carrito</a>
+          </div>
+          <div class="footer-column">
+            <h4>Contacto</h4>
+            <p>📍 Cochinoca 885, SSJ</p>
+            <p>📞 (0388) 000-0000</p>
+            <p>✉️ contacto@pintunort.com</p>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>© 2026 PintuNort — Todos los derechos reservados</p>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
