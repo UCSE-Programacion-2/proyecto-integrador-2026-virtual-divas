@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PintuNort - Catálogo</title>
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="css/catalogo.css" />
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="container">
+        <a href="index.html" class="navbar-brand">Pintu<span>Nort</span></a>
+        <ul class="navbar-menu">
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="catalogo.html" class="active">Catálogo</a></li>
+          <li><a href="admin.html">Admin</a></li>
+          <li><a href="carrito.html" class="navbar-cart">🛒 Carrito</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <header class="catalog-hero">
+      <div class="container">
+        <h1>Catálogo de <span>productos</span></h1>
+        <p>Explorá pinturas, impermeabilizantes y accesorios para tu próximo proyecto.</p>
+      </div>
+    </header>
+
+    <main class="catalog-page">
+      <div class="container catalog-layout">
+        <aside class="card filters-panel">
+          <h2>Filtros</h2>
+          <p class="filters-text">Opciones visuales para ordenar la búsqueda.</p>
+
+          <div class="filter-group">
+            <h3>Categoría</h3>
+            <label><input type="checkbox" checked /> Pintura interior</label>
+            <label><input type="checkbox" /> Pintura exterior</label>
+            <label><input type="checkbox" /> Impermeabilizantes</label>
+            <label><input type="checkbox" /> Accesorios</label>
+          </div>
+
+          <div class="filter-group">
+            <h3>Marca</h3>
+            <label><input type="checkbox" /> Polarcrin</label>
+            <label><input type="checkbox" /> Polacrin</label>
+            <label><input type="checkbox" /> Sinteplast</label>
+            <label><input type="checkbox" /> PintuNort</label>
+          </div>
+
+          <div class="filter-group">
+            <h3>Precio</h3>
+            <label><input type="radio" name="precio" /> Hasta $5.000</label>
+            <label><input type="radio" name="precio" checked /> $5.000 a $15.000</label>
+            <label><input type="radio" name="precio" /> Más de $15.000</label>
+          </div>
+
+          <button type="button" class="button button-secondary filters-button">
+            Limpiar filtros
+          </button>
+        </aside>
+
+        <section class="catalog-products">
+          <div class="catalog-header">
+            <div>
+              <h2>Productos disponibles</h2>
+              <p>Grilla visual de productos cargados para Sprint 1.</p>
+            </div>
+            <span class="catalog-count">6 productos</span>
+          </div>
+
+          <div class="catalog-products-grid">
+            <article class="card catalog-card">
+              <div class="catalog-image">
+                <img src="assets/latexinterior.png" alt="Latex Interior" />
+              </div>
+              <div class="catalog-info">
+                <p class="catalog-brand">Polarcrin</p>
+                <h3>Latex Interior</h3>
+                <p class="catalog-description">Pintura mate para paredes interiores.</p>
+                <p class="catalog-price">$15.200</p>
+                <a href="detalle.html" class="button button-primary">Ver detalle</a>
+              </div>
+            </article>
+
+            <article class="card catalog-card">
+              <div class="catalog-image">
+                <img src="assets/membrana.png" alt="Membrana en Pasta" />
+              </div>
+              <div class="catalog-info">
+                <p class="catalog-brand">Polacrin</p>
+                <h3>Membrana en Pasta</h3>
+                <p class="catalog-description">Impermeabilizante para techos y terrazas.</p>
+                <p class="catalog-price">$12.500</p>
+                <a href="detalle.html" class="button button-primary">Ver detalle</a>
+              </div>
+            </article>
+
+            <article class="card catalog-card">
+              <div class="catalog-image">
+                <img src="assets/Pinturavalen.png" alt="Microcemento en Pasta" />
+              </div>
+              <div class="catalog-info">
+                <p class="catalog-brand">Valen</p>
+                <h3>Microcemento en Pasta</h3>
+                <p class="catalog-description">Revestimiento decorativo listo para aplicar.</p>
+                <p class="catalog-price">$8.900</p>
+                <a href="detalle.html" class="button button-primary">Ver detalle</a>
+              </div>
+            </article>
+
+            <article class="card catalog-card">
+              <div class="catalog-image">
+                <img src="assets/Tonplast.png" alt="Entonador Universal" />
+              </div>
+              <div class="catalog-info">
+                <p class="catalog-brand">Sinteplast</p>
+                <h3>Entonador Universal</h3>
+                <p class="catalog-description">Colorante para pinturas al agua y sintéticas.</p>
+                <p class="catalog-price">$2.400</p>
+                <a href="detalle.html" class="button button-primary">Ver detalle</a>
+              </div>
+            </article>
+
+            <article class="card catalog-card">
+              <div class="catalog-image">
+                <img src="assets/Pintunort.png" alt="Pintura Exterior Premium" />
+              </div>
+              <div class="catalog-info">
+                <p class="catalog-brand">PintuNort</p>
+                <h3>Pintura Exterior Premium</h3>
+                <p class="catalog-description">Pintura resistente para fachadas.</p>
+                <p class="catalog-price">$18.700</p>
+                <a href="detalle.html" class="button button-primary">Ver detalle</a>
+              </div>
+            </article>
+
+            <article class="card catalog-card">
+              <div class="catalog-image">
+                <img src="assets/latexinterior.png" alt="Latex Antihongo" />
+              </div>
+              <div class="catalog-info">
+                <p class="catalog-brand">Polarcrin</p>
+                <h3>Latex Antihongo</h3>
+                <p class="catalog-description">Ideal para baños, cocinas y ambientes húmedos.</p>
+                <p class="catalog-price">$16.300</p>
+                <a href="detalle.html" class="button button-primary">Ver detalle</a>
+              </div>
+            </article>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-column">
+            <h4>PintuNort</h4>
+            <p>Tu pinturería de confianza en Jujuy.</p>
+            <p>Cochinoca 885, San Salvador de Jujuy</p>
+          </div>
+          <div class="footer-column">
+            <h4>Navegación</h4>
+            <a href="index.html">Inicio</a>
+            <a href="catalogo.html">Catálogo</a>
+            <a href="admin.html">Admin</a>
+            <a href="carrito.html">Carrito</a>
+          </div>
+          <div class="footer-column">
+            <h4>Contacto</h4>
+            <p>📍 Cochinoca 885, SSJ</p>
+            <p>📞 (0388) 000-0000</p>
+            <p>✉️ contacto@pintunort.com</p>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>© 2026 PintuNort — Todos los derechos reservados</p>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
