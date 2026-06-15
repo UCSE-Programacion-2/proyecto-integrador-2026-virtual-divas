@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PintuNort - Checkout</title>
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="css/checkout.css" />
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="navbar-brand">Pintu<span>Nort</span></a>
+            <ul class="navbar-menu">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="catalogo.html">Catálogo</a></li>
+                <li><a href="admin.html">Admin</a></li>
+                <li><a href="carrito.html" class="navbar-cart">🛒 Carrito</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <header class="checkout-hero">
+        <div class="container">
+            <h1>Finalizar <span>compra</span></h1>
+            <p>Completá tus datos para preparar el pedido y coordinar la entrega.</p>
+        </div>
+    </header>
+
+    <main class="checkout-page">
+        <div class="container checkout-layout">
+            <section class="card checkout-form-card" aria-labelledby="checkout-form-title">
+                <h2 class="checkout-section-title" id="checkout-form-title">Datos del pedido</h2>
+                <p class="checkout-section-description">Formulario visual para representar el flujo de compra.</p>
+
+                <form class="checkout-form" action="#" method="post">
+                    <fieldset class="checkout-fieldset">
+                        <legend>Datos personales</legend>
+
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label for="customer-name">Nombre</label>
+                                <input type="text" id="customer-name" name="customer-name" placeholder="Matias" />
+                            </div>
+
+                            <div class="form-group">
+                                <label for="customer-lastname">Apellido</label>
+                                <input type="text" id="customer-lastname" name="customer-lastname" placeholder="Gómez" />
+                            </div>
+
+                            <div class="form-group">
+                                <label for="customer-email">Email</label>
+                                <input type="email" id="customer-email" name="customer-email" placeholder="matias@gmail.com" />
+                            </div>
+
+                            <div class="form-group">
+                                <label for="customer-phone">Teléfono</label>
+                                <input type="tel" id="customer-phone" name="customer-phone" placeholder="388 000 0000" />
+                            </div>
+                        </div>
+                    </fieldset>
+
+                    <fieldset class="checkout-fieldset">
+                        <legend>Dirección de entrega</legend>
+
+                        <div class="form-grid">
+                            <div class="form-group form-group-full">
+                                <label for="delivery-street">Calle y número</label>
+                                <input type="text" id="delivery-street" name="delivery-street" placeholder="Cochinoca 885" />
+                            </div>
+
+                            <div class="form-group">
+                                <label for="delivery-city">Ciudad</label>
+                                <input type="text" id="delivery-city" name="delivery-city" placeholder="San Salvador de Jujuy" />
+                            </div>
+
+                            <div class="form-group">
+                                <label for="delivery-zone">Barrio / zona</label>
+                                <input type="text" id="delivery-zone" name="delivery-zone" placeholder="Centro" />
+                            </div>
+
+                            <div class="form-group form-group-full">
+                                <label for="delivery-notes">Indicaciones</label>
+                                <textarea id="delivery-notes" name="delivery-notes" placeholder="Casa con portón negro, llamar al llegar"></textarea>
+                            </div>
+                        </div>
+                    </fieldset>
+
+                    <fieldset class="checkout-fieldset">
+                        <legend>Método de pago</legend>
+
+                        <div class="payment-options">
+                            <div class="payment-option active">
+                                <span class="payment-dot"></span>
+                                <div>
+                                    <h3>Efectivo al retirar</h3>
+                                    <p>Pagás en el local al momento de retirar el pedido.</p>
+                                </div>
+                            </div>
+
+                            <div class="payment-option">
+                                <span class="payment-dot"></span>
+                                <div>
+                                    <h3>Transferencia bancaria</h3>
+                                    <p>Recibís los datos para transferir al confirmar.</p>
+                                </div>
+                            </div>
+
+                            <div class="payment-option">
+                                <span class="payment-dot"></span>
+                                <div>
+                                    <h3>Tarjeta en mostrador</h3>
+                                    <p>Abonás con tarjeta al retirar en sucursal.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </fieldset>
+
+                </form>
+            </section>
+
+            <aside class="card order-summary" aria-labelledby="order-summary-title">
+                <h2 class="checkout-section-title" id="order-summary-title">Resumen del pedido</h2>
+                <p class="checkout-section-description">Productos seleccionados para la compra.</p>
+
+                <div class="summary-products">
+                    <article class="summary-product">
+                        <img src="assets/membrana.png" alt="Membrana en Pasta" />
+                        <div class="summary-product-info">
+                            <h3>Membrana en Pasta</h3>
+                            <p>Polacrin · Cantidad: 1</p>
+                        </div>
+                        <strong>$12.500</strong>
+                    </article>
+
+                    <article class="summary-product">
+                        <img src="assets/latexinterior.png" alt="Latex Interior" />
+                        <div class="summary-product-info">
+                            <h3>Latex Interior</h3>
+                            <p>Polarcrin · Cantidad: 1</p>
+                        </div>
+                        <strong>$15.200</strong>
+                    </article>
+
+                    <article class="summary-product">
+                        <img src="assets/Tonplast.png" alt="Entonador Universal" />
+                        <div class="summary-product-info">
+                            <h3>Entonador Universal</h3>
+                            <p>Sinteplast · Cantidad: 2</p>
+                        </div>
+                        <strong>$4.800</strong>
+                    </article>
+                </div>
+
+                <div class="summary-totals">
+                    <div class="summary-row">
+                        <span>Subtotal</span>
+                        <strong>$32.500</strong>
+                    </div>
+                    <div class="summary-row">
+                        <span>Envío</span>
+                        <strong>$1.500</strong>
+                    </div>
+                    <div class="summary-row">
+                        <span>Descuento</span>
+                        <strong>$0</strong>
+                    </div>
+                    <div class="summary-row summary-total">
+                        <span>Total</span>
+                        <strong>$34.000</strong>
+                    </div>
+                </div>
+
+                <div class="checkout-actions">
+                    <a href="carrito.html" class="button button-secondary">Volver al carrito</a>
+                    <button type="button" class="button button-primary">Confirmar compra</button>
+                </div>
+            </aside>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <h4>PintuNort</h4>
+                    <p>Tu pinturería de confianza en Jujuy.</p>
+                    <p>Cochinoca 885, San Salvador de Jujuy</p>
+                </div>
+                <div class="footer-column">
+                    <h4>Navegación</h4>
+                    <a href="index.html">Inicio</a>
+                    <a href="catalogo.html">Catálogo</a>
+                    <a href="admin.html">Admin</a>
+                    <a href="carrito.html">Carrito</a>
+                </div>
+                <div class="footer-column">
+                    <h4>Contacto</h4>
+                    <p>📍 Cochinoca 885, SSJ</p>
+                    <p>📞 (0388) 000-0000</p>
+                    <p>✉️ contacto@pintunort.com</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2026 PintuNort — Todos los derechos reservados</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
