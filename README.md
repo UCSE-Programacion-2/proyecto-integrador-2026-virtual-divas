@@ -1,5 +1,8 @@
 Tablero de GitHub Projects: https://github.com/orgs/UCSE-Programacion-2/projects/41/views/1
+
 Video Sprint 1: https://drive.google.com/file/d/1ZpSSECuKeV9jJd9f4MNsHiVgck0M2u3G/view?usp=sharing
+
+Url pagina:https://ucse-programacion-2.github.io/proyecto-integrador-2026-virtual-divas/
 # PintuNort / VirtualDivas - Programación II 2026
 
 ## 👥 Integrantes
