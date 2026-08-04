@@ -1,6 +1,8 @@
 const express = require('express')
 const dotenv = require('dotenv')
 
+const connectDB = require('../config/db')
+
 dotenv.config()
 
 const app = express()
@@ -13,6 +15,17 @@ app.get('/', (req, res) => {
 
 const PORT = process.env.PORT || 3000
 
-app.listen(PORT, () => {
-  console.log(`Servidor corriendo en puerto ${PORT}`)
-})
+const startServer = async () => {
+  try {
+    await connectDB()
+
+    app.listen(PORT, () => {
+      console.log(`Servidor corriendo en puerto ${PORT}`)
+    })
+  } catch (error) {
+    console.error('Error al conectar a MongoDB:', error.message)
+    process.exit(1)
+  }
+}
+
+startServer()
