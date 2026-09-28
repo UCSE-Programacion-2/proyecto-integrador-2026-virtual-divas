@@ -232,6 +232,17 @@
             font-size: 14px;
         }
 
+        .productos-mensaje {
+            width: 100%;
+            padding: 24px;
+            text-align: center;
+            color: var(--color-texto-secundario);
+            background-color: var(--color-blanco);
+            border: 1px solid var(--color-borde);
+            border-radius: var(--border-radius);
+            box-shadow: var(--sombra);
+        }
+
         .footer {
             background-color: var(--color-primario);
             color: var(--color-blanco);
@@ -378,56 +389,8 @@
     <section class="destacados">
         <div class="contenedor">
             <h2 class="seccion-titulo">Productos Destacados</h2>
-            <div class="productos-grid">
-
-                <div class="producto-card">
-                    <div class="producto-imagen">
-                        <img src="assets/membrana.png" alt="Membrana">
-                    </div>
-                    <div class="producto-info">
-                        <p class="producto-marca">Polacrin</p>
-                        <h3 class="producto-nombre">Membrana en Pasta</h3>
-                        <p class="producto-precio">$12.500</p>
-                        <a href="detalle.html" class="btn btn-primario">Ver detalle</a>
-                    </div>
-                </div>
-
-                <div class="producto-card">
-                    <div class="producto-imagen">
-                        <img src="assets/Pinturavalen.png" alt="PinturaValen">
-                    </div>
-                    <div class="producto-info">
-                        <p class="producto-marca">Valen</p>
-                        <h3 class="producto-nombre">Microcemento en Pasta</h3>
-                        <p class="producto-precio">$8.900</p>
-                        <a href="detalle.html" class="btn btn-primario">Ver detalle</a>
-                    </div>
-                </div>
-
-                <div class="producto-card">
-                    <div class="producto-imagen">
-                        <img src="assets/latexinterior.png" alt="Latex Interior">
-                    </div>
-                    <div class="producto-info">
-                        <p class="producto-marca">Polarcrin</p>
-                        <h3 class="producto-nombre">Latex Interior</h3>
-                        <p class="producto-precio">$15.200</p>
-                        <a href="detalle.html" class="btn btn-primario">Ver detalle</a>
-                    </div>
-                </div>
-
-                <div class="producto-card">
-                    <div class="producto-imagen">
-                        <img src="assets/Tonplast.png" alt="Entonador">
-                    </div>
-                    <div class="producto-info">
-                        <p class="producto-marca">Sinteplast</p>
-                        <h3 class="producto-nombre">Entonador Universal</h3>
-                        <p class="producto-precio">$2.400</p>
-                        <a href="detalle.html" class="btn btn-primario">Ver detalle</a>
-                    </div>
-                </div>
-
+            <div class="productos-grid" id="productos-destacados">
+                <p class="productos-mensaje">Cargando productos...</p>
             </div>
         </div>
     </section>
@@ -459,6 +422,9 @@
             </div>
         </div>
     </footer>
+
+    <script src="js/products-service.js"></script>
+    <script src="js/home-products.js"></script>
 
 </body>
 </html>
