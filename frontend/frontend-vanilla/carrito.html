@@ -33,9 +33,9 @@
           <div class="cart-header">
             <div>
               <h2>Productos agregados</h2>
-              <p>Tabla visual con productos de ejemplo para Sprint 1.</p>
+              <p>Productos guardados en el carrito.</p>
             </div>
-            <span class="cart-count">3 productos</span>
+            <span class="cart-count" id="cart-count">0 productos</span>
           </div>
 
           <div class="cart-table-wrapper">
@@ -49,77 +49,9 @@
                   <th>Acción</th>
                 </tr>
               </thead>
-              <tbody>
+              <tbody id="cart-body">
                 <tr>
-                  <td data-label="Producto">
-                    <div class="cart-product-cell">
-                      <img src="assets/latexinterior.png" alt="Latex Interior" />
-                      <div>
-                        <p class="cart-product-name">Latex Interior</p>
-                        <p class="cart-product-brand">Polarcrin · Pintura interior</p>
-                      </div>
-                    </div>
-                  </td>
-                  <td data-label="Precio">$15.200</td>
-                  <td data-label="Cantidad">
-                    <div class="quantity-control">
-                      <button type="button">-</button>
-                      <span>1</span>
-                      <button type="button">+</button>
-                    </div>
-                  </td>
-                  <td data-label="Subtotal"><strong>$15.200</strong></td>
-                  <td data-label="Acción">
-                    <button type="button" class="remove-button">Quitar</button>
-                  </td>
-                </tr>
-
-                <tr>
-                  <td data-label="Producto">
-                    <div class="cart-product-cell">
-                      <img src="assets/membrana.png" alt="Membrana en Pasta" />
-                      <div>
-                        <p class="cart-product-name">Membrana en Pasta</p>
-                        <p class="cart-product-brand">Polacrin · Impermeabilizante</p>
-                      </div>
-                    </div>
-                  </td>
-                  <td data-label="Precio">$12.500</td>
-                  <td data-label="Cantidad">
-                    <div class="quantity-control">
-                      <button type="button">-</button>
-                      <span>1</span>
-                      <button type="button">+</button>
-                    </div>
-                  </td>
-                  <td data-label="Subtotal"><strong>$12.500</strong></td>
-                  <td data-label="Acción">
-                    <button type="button" class="remove-button">Quitar</button>
-                  </td>
-                </tr>
-
-                <tr>
-                  <td data-label="Producto">
-                    <div class="cart-product-cell">
-                      <img src="assets/Tonplast.png" alt="Entonador Universal" />
-                      <div>
-                        <p class="cart-product-name">Entonador Universal</p>
-                        <p class="cart-product-brand">Sinteplast · Accesorios</p>
-                      </div>
-                    </div>
-                  </td>
-                  <td data-label="Precio">$2.400</td>
-                  <td data-label="Cantidad">
-                    <div class="quantity-control">
-                      <button type="button">-</button>
-                      <span>2</span>
-                      <button type="button">+</button>
-                    </div>
-                  </td>
-                  <td data-label="Subtotal"><strong>$4.800</strong></td>
-                  <td data-label="Acción">
-                    <button type="button" class="remove-button">Quitar</button>
-                  </td>
+                  <td colspan="5">Cargando carrito...</td>
                 </tr>
               </tbody>
             </table>
@@ -135,11 +67,11 @@
           <div class="summary-rows">
             <div class="summary-row">
               <span>Subtotal</span>
-              <strong>$32.500</strong>
+              <strong id="cart-subtotal">$0</strong>
             </div>
             <div class="summary-row">
               <span>Envío estimado</span>
-              <strong>$1.500</strong>
+              <strong id="cart-shipping">$0</strong>
             </div>
             <div class="summary-row">
               <span>Descuento</span>
@@ -147,7 +79,7 @@
             </div>
             <div class="summary-row summary-total">
               <span>Total</span>
-              <strong>$34.000</strong>
+              <strong id="cart-total">$0</strong>
             </div>
           </div>
 
@@ -186,5 +118,9 @@
         </div>
       </div>
     </footer>
+    <script src="js/products-service.js"></script>
+    <script src="js/cart-service.js"></script>
+    <script src="js/cart.js"></script>
+    <script src="js/navbar-state.js"></script>
   </body>
 </html>
