@@ -30,6 +30,16 @@ const renderProductDetail = (product) => {
   mainImage.alt = product.nombre;
   thumbnailImage.src = image;
   thumbnailImage.alt = `Vista frontal de ${product.nombre}`;
+
+  const addCartButton = document.getElementById('add-cart-button');
+  addCartButton.onclick = () => {
+    CartService.addProduct(product);
+    addCartButton.textContent = 'Producto agregado';
+
+    setTimeout(() => {
+      addCartButton.textContent = 'Agregar al carrito';
+    }, 1500);
+  };
 };
 
 const loadProductDetail = async () => {
