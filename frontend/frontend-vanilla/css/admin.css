@@ -85,6 +85,27 @@
     resize: vertical;
 }
 
+.admin-message {
+    border-radius: var(--border-radius-md);
+    display: none;
+    font-size: var(--font-size-sm);
+    padding: 10px;
+}
+
+.admin-message.visible {
+    display: block;
+}
+
+.admin-message.success {
+    background-color: #e6f6ec;
+    color: var(--color-success);
+}
+
+.admin-message.error {
+    background-color: #fff0f3;
+    color: var(--color-secondary);
+}
+
 .products-panel {
     flex: 1;
     min-width: 0;
