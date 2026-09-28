@@ -34,49 +34,52 @@
                 <h2 class="admin-section-title" id="create-product-title">Crear Producto</h2>
                 <p class="admin-section-description">Formulario visual para cargar datos de un nuevo producto.</p>
 
-                <form class="product-form" action="#" method="post">
+                <form class="product-form" id="product-form">
                     <div class="form-group">
                         <label for="product-name-input">Nombre</label>
-                        <input type="text" id="product-name-input" name="product-name" placeholder="Latex Interior" />
+                        <input type="text" id="product-name-input" name="nombre" placeholder="Latex Interior" required />
                     </div>
 
                     <div class="form-group">
                         <label for="product-brand-input">Marca</label>
-                        <input type="text" id="product-brand-input" name="product-brand" placeholder="Polarcrin" />
+                        <input type="text" id="product-brand-input" name="marca" placeholder="Polarcrin" required />
                     </div>
 
                     <div class="form-group">
                         <label for="product-category-input">Categoría</label>
-                        <select id="product-category-input" name="product-category">
-                            <option>Pintura Interior</option>
-                            <option>Pintura Exterior</option>
-                            <option>Impermeabilizantes</option>
-                            <option>Accesorios</option>
+                        <select id="product-category-input" name="categoria" required>
+                            <option value="interior">Pintura Interior</option>
+                            <option value="exterior">Pintura Exterior</option>
+                            <option value="esmalte">Esmaltes</option>
+                            <option value="accesorio">Accesorios</option>
                         </select>
                     </div>
 
                     <div class="form-group">
                         <label for="product-price-input">Precio</label>
-                        <input type="text" id="product-price-input" name="product-price" placeholder="$15.200" />
+                        <input type="number" id="product-price-input" name="precio" placeholder="15200" required />
                     </div>
 
                     <div class="form-group">
                         <label for="product-stock-input">Stock</label>
-                        <input type="number" id="product-stock-input" name="product-stock" placeholder="24" />
+                        <input type="number" id="product-stock-input" name="stock" placeholder="24" required />
                     </div>
 
                     <div class="form-group">
                         <label for="product-image-input">Imagen</label>
-                        <input type="text" id="product-image-input" name="product-image" placeholder="assets/producto.png" />
+                        <input type="text" id="product-image-input" name="imagen" placeholder="assets/producto.png" />
                     </div>
 
                     <div class="form-group form-group-full">
                         <label for="product-description-input">Descripción</label>
-                        <textarea id="product-description-input" name="product-description" placeholder="Descripción breve del producto"></textarea>
+                        <textarea id="product-description-input" name="descripcion" placeholder="Descripción breve del producto"></textarea>
                     </div>
 
+                    <p class="admin-message" id="admin-message"></p>
+
                     <div class="form-group form-group-full">
-                        <button type="button" class="button button-primary">Crear Producto</button>
+                        <button type="submit" class="button button-primary" id="product-submit-button">Crear Producto</button>
+                        <button type="button" class="button button-secondary" id="cancel-edit-button" hidden>Cancelar edición</button>
                     </div>
                 </form>
             </section>
@@ -87,7 +90,7 @@
                         <h2 class="admin-section-title" id="products-list-title">Productos listados</h2>
                         <p class="admin-section-description">Tabla visual de productos cargados en el sistema.</p>
                     </div>
-                    <span class="products-count">6 productos</span>
+                    <span class="products-count" id="products-count">0 productos</span>
                 </div>
 
                 <div class="table-wrapper">
@@ -102,132 +105,9 @@
                                 <th>Acciones</th>
                             </tr>
                         </thead>
-                        <tbody>
+                        <tbody id="products-body">
                             <tr>
-                                <td data-label="Producto">
-                                    <div class="product-cell">
-                                        <img class="product-thumb" src="assets/membrana.png" alt="Membrana en Pasta" />
-                                        <div>
-                                            <p class="product-name">Membrana en Pasta</p>
-                                            <p class="product-brand">Polacrin</p>
-                                        </div>
-                                    </div>
-                                </td>
-                                <td data-label="Categoría">Impermeabilizantes</td>
-                                <td data-label="Precio">$12.500</td>
-                                <td data-label="Stock">18</td>
-                                <td data-label="Estado"><span class="status-badge status-active">Activo</span></td>
-                                <td data-label="Acciones">
-                                    <div class="table-actions">
-                                        <button type="button" class="button button-secondary button-small">Editar</button>
-                                        <button type="button" class="button button-danger button-small">Eliminar</button>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td data-label="Producto">
-                                    <div class="product-cell">
-                                        <img class="product-thumb" src="assets/Pinturavalen.png" alt="Microcemento en Pasta" />
-                                        <div>
-                                            <p class="product-name">Microcemento en Pasta</p>
-                                            <p class="product-brand">Valen</p>
-                                        </div>
-                                    </div>
-                                </td>
-                                <td data-label="Categoría">Revestimientos</td>
-                                <td data-label="Precio">$8.900</td>
-                                <td data-label="Stock">9</td>
-                                <td data-label="Estado"><span class="status-badge status-low">Stock bajo</span></td>
-                                <td data-label="Acciones">
-                                    <div class="table-actions">
-                                        <button type="button" class="button button-secondary button-small">Editar</button>
-                                        <button type="button" class="button button-danger button-small">Eliminar</button>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td data-label="Producto">
-                                    <div class="product-cell">
-                                        <img class="product-thumb" src="assets/latexinterior.png" alt="Latex Interior" />
-                                        <div>
-                                            <p class="product-name">Latex Interior</p>
-                                            <p class="product-brand">Polarcrin</p>
-                                        </div>
-                                    </div>
-                                </td>
-                                <td data-label="Categoría">Pintura Interior</td>
-                                <td data-label="Precio">$15.200</td>
-                                <td data-label="Stock">24</td>
-                                <td data-label="Estado"><span class="status-badge status-active">Activo</span></td>
-                                <td data-label="Acciones">
-                                    <div class="table-actions">
-                                        <button type="button" class="button button-secondary button-small">Editar</button>
-                                        <button type="button" class="button button-danger button-small">Eliminar</button>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td data-label="Producto">
-                                    <div class="product-cell">
-                                        <img class="product-thumb" src="assets/Tonplast.png" alt="Entonador Universal" />
-                                        <div>
-                                            <p class="product-name">Entonador Universal</p>
-                                            <p class="product-brand">Sinteplast</p>
-                                        </div>
-                                    </div>
-                                </td>
-                                <td data-label="Categoría">Accesorios</td>
-                                <td data-label="Precio">$2.400</td>
-                                <td data-label="Stock">36</td>
-                                <td data-label="Estado"><span class="status-badge status-active">Activo</span></td>
-                                <td data-label="Acciones">
-                                    <div class="table-actions">
-                                        <button type="button" class="button button-secondary button-small">Editar</button>
-                                        <button type="button" class="button button-danger button-small">Eliminar</button>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td data-label="Producto">
-                                    <div class="product-cell">
-                                        <img class="product-thumb" src="assets/Pintunort.png" alt="Pintura Exterior Premium" />
-                                        <div>
-                                            <p class="product-name">Pintura Exterior Premium</p>
-                                            <p class="product-brand">PintuNort</p>
-                                        </div>
-                                    </div>
-                                </td>
-                                <td data-label="Categoría">Pintura Exterior</td>
-                                <td data-label="Precio">$18.700</td>
-                                <td data-label="Stock">14</td>
-                                <td data-label="Estado"><span class="status-badge status-active">Activo</span></td>
-                                <td data-label="Acciones">
-                                    <div class="table-actions">
-                                        <button type="button" class="button button-secondary button-small">Editar</button>
-                                        <button type="button" class="button button-danger button-small">Eliminar</button>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td data-label="Producto">
-                                    <div class="product-cell">
-                                        <img class="product-thumb" src="assets/latexinterior.png" alt="Latex Antihongo" />
-                                        <div>
-                                            <p class="product-name">Latex Antihongo</p>
-                                            <p class="product-brand">Polarcrin</p>
-                                        </div>
-                                    </div>
-                                </td>
-                                <td data-label="Categoría">Pintura Interior</td>
-                                <td data-label="Precio">$16.300</td>
-                                <td data-label="Stock">7</td>
-                                <td data-label="Estado"><span class="status-badge status-low">Stock bajo</span></td>
-                                <td data-label="Acciones">
-                                    <div class="table-actions">
-                                        <button type="button" class="button button-secondary button-small">Editar</button>
-                                        <button type="button" class="button button-danger button-small">Eliminar</button>
-                                    </div>
-                                </td>
+                                <td colspan="6">Cargando productos...</td>
                             </tr>
                         </tbody>
                     </table>
@@ -263,6 +143,9 @@
             </div>
         </div>
     </footer>
+
+    <script src="js/products-service.js"></script>
+    <script src="js/admin-products.js"></script>
 
     <script src="js/navbar-state.js"></script>
 </body>
