@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PintuNort - Iniciar sesión</title>
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="css/login.css" />
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="container">
+        <a href="index.html" class="navbar-brand">Pintu<span>Nort</span></a>
+        <ul class="navbar-menu">
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="catalogo.html">Catálogo</a></li>
+          <li><a href="admin.html">Admin</a></li>
+          <li><a href="login.html" class="active">Iniciar sesión</a></li>
+          <li><a href="carrito.html" class="navbar-cart">🛒 Carrito</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <header class="auth-hero">
+      <div class="container">
+        <h1>Iniciar <span>sesión</span></h1>
+        <p>Accedé a tu cuenta para gestionar tu carrito y tus compras.</p>
+      </div>
+    </header>
+
+    <main class="auth-page">
+      <div class="container">
+        <section class="card auth-card" aria-labelledby="login-title">
+          <h2 id="login-title">Ingresá tus datos</h2>
+          <p class="auth-description">Usá el email y la contraseña registrados en PintuNort.</p>
+
+          <form class="auth-form" id="login-form">
+            <div class="form-group">
+              <label for="email-input">Email</label>
+              <input type="email" id="email-input" name="email" placeholder="usuario@mail.com" required />
+            </div>
+
+            <div class="form-group">
+              <label for="password-input">Contraseña</label>
+              <input type="password" id="password-input" name="password" placeholder="Tu contraseña" required />
+            </div>
+
+            <p class="auth-message" id="login-message" role="alert"></p>
+
+            <div class="auth-actions">
+              <button type="submit" class="button button-primary" id="login-button">Iniciar sesión</button>
+              <a href="index.html" class="auth-link">Volver al inicio</a>
+            </div>
+          </form>
+        </section>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-column">
+            <h4>PintuNort</h4>
+            <p>Tu pinturería de confianza en Jujuy.</p>
+            <p>Cochinoca 885, San Salvador de Jujuy</p>
+          </div>
+          <div class="footer-column">
+            <h4>Navegación</h4>
+            <a href="index.html">Inicio</a>
+            <a href="catalogo.html">Catálogo</a>
+            <a href="admin.html">Admin</a>
+            <a href="carrito.html">Carrito</a>
+          </div>
+          <div class="footer-column">
+            <h4>Contacto</h4>
+            <p>📍 Cochinoca 885, SSJ</p>
+            <p>📞 (0388) 000-0000</p>
+            <p>✉️ contacto@pintunort.com</p>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>© 2026 PintuNort — Todos los derechos reservados</p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="js/login.js"></script>
+  </body>
+</html>
