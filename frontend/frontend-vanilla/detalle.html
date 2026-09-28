@@ -23,7 +23,7 @@
     <header class="detail-hero">
       <div class="container">
         <p class="detail-kicker">Detalle del producto</p>
-        <h1>Latex Interior <span class="detail-hero-highlight">Polarcrin</span></h1>
+        <h1><span id="hero-product-name">Latex Interior</span> <span class="detail-hero-highlight" id="hero-product-brand">Polarcrin</span></h1>
         <p class="detail-hero-description">
           Conocé sus características principales y agregalo al carrito para preparar tu pedido.
         </p>
@@ -35,11 +35,11 @@
         <section class="card product-detail-card" aria-labelledby="product-detail-title">
           <div class="product-gallery">
             <div class="product-main-image">
-              <img src="assets/latexinterior.png" alt="Latex Interior Polarcrin" />
+              <img src="assets/latexinterior.png" alt="Latex Interior Polarcrin" id="product-main-img" />
             </div>
             <div class="product-thumbnails" aria-label="Vistas del producto">
               <button type="button" class="product-thumbnail active">
-                <img src="assets/latexinterior.png" alt="Vista frontal del Latex Interior" />
+                <img src="assets/latexinterior.png" alt="Vista frontal del Latex Interior" id="product-thumb-img" />
               </button>
               <button type="button" class="product-thumbnail">
                 <img src="assets/Pintunort.png" alt="Referencia de pinturería PintuNort" />
@@ -51,17 +51,17 @@
           </div>
 
           <div class="product-detail-info">
-            <span class="product-category">Pintura interior</span>
+            <span class="product-category" id="product-category">Pintura interior</span>
             <h2 id="product-detail-title">Latex Interior</h2>
-            <p class="product-brand-detail">Polarcrin</p>
-            <p class="product-description">
+            <p class="product-brand-detail" id="product-brand">Polarcrin</p>
+            <p class="product-description" id="product-description">
               Pintura latex para interiores con buena cobertura, terminación mate y aplicación
               sencilla. Ideal para renovar paredes y cielorrasos en ambientes de uso diario.
             </p>
 
             <div class="product-price-box">
               <span class="product-price-label">Precio final</span>
-              <strong>$15.200</strong>
+              <strong id="product-price">$15.200</strong>
             </div>
 
             <div class="product-actions">
@@ -77,7 +77,7 @@
           <div class="summary-list">
             <div class="summary-item">
               <span class="summary-label">Disponibilidad</span>
-              <strong>24 unidades</strong>
+              <strong id="product-stock">24 unidades</strong>
             </div>
             <div class="summary-item">
               <span class="summary-label">Presentación</span>
@@ -168,5 +168,8 @@
         </div>
       </div>
     </footer>
+
+    <script src="js/products-service.js"></script>
+    <script src="js/product-detail.js"></script>
   </body>
 </html>
