@@ -180,6 +180,29 @@ ul {
     border-bottom: none !important;
 }
 
+.navbar-user {
+    color: var(--color-surface);
+    font-size: 15px;
+    font-weight: var(--font-weight-bold);
+}
+
+.navbar-logout {
+    background-color: transparent;
+    border: 2px solid var(--color-secondary);
+    border-radius: var(--border-radius-md);
+    color: var(--color-secondary);
+    cursor: pointer;
+    font: inherit;
+    font-size: 15px;
+    font-weight: var(--font-weight-bold);
+    padding: 8px 12px;
+}
+
+.navbar-logout:hover {
+    background-color: var(--color-secondary);
+    color: var(--color-surface);
+}
+
 /*
    FOOTER
    */

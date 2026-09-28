@@ -3,9 +3,9 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>PintuNort - Iniciar sesión</title>
+    <title>PintuNort - Registro</title>
     <link rel="stylesheet" href="css/styles.css" />
-    <link rel="stylesheet" href="css/login.css" />
+    <link rel="stylesheet" href="css/register.css" />
   </head>
   <body>
     <nav class="navbar">
@@ -15,7 +15,8 @@
           <li><a href="index.html">Inicio</a></li>
           <li><a href="catalogo.html">Catálogo</a></li>
           <li><a href="admin.html">Admin</a></li>
-          <li><a href="login.html" class="active">Iniciar sesión</a></li>
+          <li><a href="login.html">Iniciar sesión</a></li>
+          <li><a href="register.html" class="active">Registrarse</a></li>
           <li><a href="carrito.html" class="navbar-cart">🛒 Carrito</a></li>
         </ul>
       </div>
@@ -23,18 +24,23 @@
 
     <header class="auth-hero">
       <div class="container">
-        <h1>Iniciar <span>sesión</span></h1>
-        <p>Accedé a tu cuenta para gestionar tu carrito y tus compras.</p>
+        <h1>Crear <span>cuenta</span></h1>
+        <p>Registrate para acceder a tu cuenta y preparar tus compras en PintuNort.</p>
       </div>
     </header>
 
     <main class="auth-page">
       <div class="container">
-        <section class="card auth-card" aria-labelledby="login-title">
-          <h2 id="login-title">Ingresá tus datos</h2>
-          <p class="auth-description">Usá el email y la contraseña registrados en PintuNort.</p>
+        <section class="card auth-card" aria-labelledby="register-title">
+          <h2 id="register-title">Completá tus datos</h2>
+          <p class="auth-description">Usá un email válido y una contraseña segura para crear tu cuenta.</p>
 
-          <form class="auth-form" id="login-form">
+          <form class="auth-form" id="register-form">
+            <div class="form-group">
+              <label for="name-input">Nombre</label>
+              <input type="text" id="name-input" name="name" placeholder="Juan Pérez" required />
+            </div>
+
             <div class="form-group">
               <label for="email-input">Email</label>
               <input type="email" id="email-input" name="email" placeholder="usuario@mail.com" required />
@@ -42,14 +48,14 @@
 
             <div class="form-group">
               <label for="password-input">Contraseña</label>
-              <input type="password" id="password-input" name="password" placeholder="Tu contraseña" required />
+              <input type="password" id="password-input" name="password" placeholder="Mínimo 6 caracteres" minlength="6" required />
             </div>
 
-            <p class="auth-message" id="login-message" role="alert"></p>
+            <p class="auth-message" id="register-message" role="alert"></p>
 
             <div class="auth-actions">
-              <button type="submit" class="button button-primary" id="login-button">Iniciar sesión</button>
-              <a href="index.html" class="auth-link">Volver al inicio</a>
+              <button type="submit" class="button button-primary" id="register-button">Crear cuenta</button>
+              <a href="login.html" class="auth-link">Ya tengo cuenta</a>
             </div>
           </form>
         </section>
@@ -84,7 +90,6 @@
       </div>
     </footer>
 
-    <script src="js/login.js"></script>
-    <script src="js/navbar-state.js"></script>
+    <script src="js/register.js"></script>
   </body>
 </html>
