@@ -185,6 +185,26 @@ ul { list-style: none; }
 
 main { flex: 1; }
 
+.auth-page { display: grid; place-items: center; min-height: calc(100vh - 40px); padding: 40px 20px; }
+.auth-card { display: grid; gap: 18px; width: min(100%, 440px); padding: 40px; background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--border-radius-lg); box-shadow: var(--shadow-md); }
+.auth-card h1 { margin-bottom: 8px; color: var(--color-primary); font-size: clamp(2rem, 5vw, 2.7rem); }
+.auth-card label { display: grid; gap: 8px; color: var(--color-primary); font-weight: var(--font-weight-bold); }
+.auth-card input { width: 100%; padding: 13px 14px; border: 1px solid var(--color-border); border-radius: var(--border-radius-sm); font: inherit; transition: border-color 0.2s, box-shadow 0.2s; }
+.auth-card input:focus { border-color: var(--color-secondary); outline: none; box-shadow: 0 0 0 3px rgba(233, 69, 96, 0.15); }
+.auth-card .button-primary { width: 100%; padding: 13px 18px; border: 0; border-radius: var(--border-radius-sm); background: var(--color-secondary); color: var(--color-surface); font: inherit; font-weight: var(--font-weight-bold); transition: background-color 0.2s, transform 0.2s; }
+.auth-card .button-primary:hover:not(:disabled) { background: #c73652; transform: translateY(-1px); }
+.auth-card p { text-align: center; color: var(--color-text-muted); }
+.auth-card a, .home-page a { color: var(--color-secondary); font-weight: 600; }
+.form-error { color: var(--color-error); }
+.status { padding: 40px; text-align: center; }
+.home-page { display: grid; place-items: center; min-height: 80vh; padding: 32px 20px; }
+.home-card { display: grid; gap: 16px; width: min(100%, 560px); padding: 28px; background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--border-radius-lg); box-shadow: var(--shadow-sm); }
+.home-card h1 { color: var(--color-primary); font-size: clamp(2rem, 5vw, 2.8rem); }
+.home-card h1 span { color: var(--color-secondary); }
+.home-card p { color: var(--color-text-muted); font-size: var(--font-size-md); }
+.home-card .button-danger { width: fit-content; padding: 10px 18px; border: 2px solid var(--color-secondary); border-radius: var(--border-radius-sm); background: transparent; color: var(--color-secondary); font: inherit; font-weight: var(--font-weight-bold); }
+.home-card .button-danger:hover { background: var(--color-secondary); color: var(--color-surface); }
+
 button:disabled, .button:disabled, .btn:disabled {
   cursor: not-allowed;
   opacity: 0.6;
