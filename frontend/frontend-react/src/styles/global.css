@@ -204,6 +204,13 @@ main { flex: 1; }
 .home-card p { color: var(--color-text-muted); font-size: var(--font-size-md); }
 .home-card .button-danger { width: fit-content; padding: 10px 18px; border: 2px solid var(--color-secondary); border-radius: var(--border-radius-sm); background: transparent; color: var(--color-secondary); font: inherit; font-weight: var(--font-weight-bold); }
 .home-card .button-danger:hover { background: var(--color-secondary); color: var(--color-surface); }
+.cart-navbar { display: flex; justify-content: space-between; padding-top: 20px; }
+.cart-navbar a { color: var(--color-primary); font-weight: var(--font-weight-bold); }
+.cart-page { display: grid; gap: 16px; }
+.cart-list { display: grid; gap: 10px; padding: 0; }
+.cart-item { display: grid; grid-template-columns: 1fr auto auto; gap: 12px; align-items: center; padding: 12px; background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--border-radius-sm); }
+.cart-item input { width: 64px; padding: 6px; }
+.cart-item button, .cart-page > button { padding: 8px 12px; border: 1px solid var(--color-secondary); border-radius: var(--border-radius-sm); background: transparent; color: var(--color-secondary); cursor: pointer; }
 
 button:disabled, .button:disabled, .btn:disabled {
   cursor: not-allowed;
