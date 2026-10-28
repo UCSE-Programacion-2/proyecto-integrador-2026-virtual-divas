@@ -202,3 +202,5 @@ button:disabled, .button:disabled, .btn:disabled {
   }
   .footer-grid { flex-direction: column; gap: 24px; }
 }
+
+.page { padding-top: 48px; }
