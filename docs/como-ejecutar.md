@@ -13,10 +13,12 @@ Este documento te guía para correr backend y frontend según lo que se exige po
 2. Crear archivo `backend/.env` usando `backend/.env.example`:
    - `PORT`
    - `MONGODB_URI`
+   - `JWT_SECRET`
 3. Ejecutar:
 ```bash
 cd backend
 npm install
+npm run seed   # 10 productos + usuario admin
 npm run dev
 ```
 
@@ -36,7 +38,8 @@ En `frontend/frontend-react/`:
 ```bash
 cd frontend/frontend-react
 npm install
-npm run dev
+cp .env.example .env   # VITE_API_URL=http://localhost:3000/api
+npm run dev            # http://localhost:5173
 ```
 
 ## 4) Integración (Sprint 3/4) - CORS

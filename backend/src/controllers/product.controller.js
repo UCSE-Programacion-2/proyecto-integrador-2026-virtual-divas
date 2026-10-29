@@ -1,10 +1,26 @@
+const mongoose = require('mongoose');
 const Producto = require('../models/Product');
 
+// Escapa caracteres especiales para usar el texto en una RegExp
+const escaparRegex = (texto) => texto.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+
+// GET /api/products?categoria=interior&q=latex
 const obtenerProductos = async (req, res) => {
   try {
-    const { categoria } = req.query;
-    const filtro = categoria ? { categoria } : {};
-    const productos = await Producto.find(filtro);
+    const categoria = req.query.categoria || req.query.category;
+    const q = String(req.query.q || '').trim();
+    const filtro = {};
+
+    if (categoria) {
+      filtro.categoria = categoria;
+    }
+
+    if (q) {
+      const regex = new RegExp(escaparRegex(q), 'i');
+      filtro.$or = [{ nombre: regex }, { marca: regex }, { descripcion: regex }];
+    }
+
+    const productos = await Producto.find(filtro).sort({ nombre: 1 });
     res.json(productos);
   } catch (error) {
     res.status(500).json({ mensaje: 'Error al obtener productos' });
@@ -13,6 +29,10 @@ const obtenerProductos = async (req, res) => {
 
 const obtenerProductoPorId = async (req, res) => {
   try {
+    if (!mongoose.Types.ObjectId.isValid(req.params.id)) {
+      return res.status(404).json({ mensaje: 'Producto no encontrado' });
+    }
+
     const producto = await Producto.findById(req.params.id);
     if (!producto) {
       return res.status(404).json({ mensaje: 'Producto no encontrado' });

@@ -32,10 +32,18 @@ Usá una estructura simple y legible, por ejemplo:
 
 ## Variables de entorno / configuración
 
-Si necesitás configurar la URL del backend, documentá cómo setearla:
+La URL del backend está en `js/config.js`:
 
-- por ejemplo en `src/config.js`
-- o por `process.env` si usaran un bundler (Vite, etc.)
+- en `localhost` / `127.0.0.1` (Live Server) usa `http://localhost:3000/api`
+- publicado en GitHub Pages usa `PRODUCTION_API_URL` (la URL de Render). Reemplácenla por la real.
+
+Todas las páginas cargan `js/config.js` antes que el resto de los scripts.
+
+## Cómo ejecutar (PintuNort)
+
+1. Levantar el backend (`cd backend && npm run dev`).
+2. Abrir `frontend/frontend-vanilla/index.html` con Live Server.
+3. Para el panel admin, iniciar sesión con el usuario admin del seed (`admin@pintunort.com`).
 
 ## Ejecución (cómo debería estar documentado)
 

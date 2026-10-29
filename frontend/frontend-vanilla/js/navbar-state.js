@@ -30,6 +30,12 @@ const createNavItem = (content) => {
   return item;
 };
 
+// Inserta antes del botón de carrito para que quede siempre último
+const appendNavItem = (navbarList, item) => {
+  const cartItem = navbarList.querySelector('.navbar-cart, .navbar-carrito')?.closest('li');
+  navbarList.insertBefore(item, cartItem || null);
+};
+
 const createAuthLink = (href, text) => {
   const link = document.createElement('a');
   link.href = href;
@@ -43,7 +49,17 @@ const createAuthLink = (href, text) => {
 };
 
 const renderLoggedOutNav = (navbarList) => {
-  navbarList.appendChild(createAuthLink('login.html', 'Iniciar sesión'));
+  appendNavItem(navbarList, createAuthLink('login.html', 'Iniciar sesión'));
+  appendNavItem(navbarList, createAuthLink('register.html', 'Registrarse'));
+};
+
+// El link al panel solo se muestra a los administradores
+const toggleAdminLink = (navbarList, user) => {
+  const adminLink = navbarList.querySelector('a[href="admin.html"]');
+
+  if (adminLink && user?.role !== 'admin') {
+    adminLink.closest('li')?.remove();
+  }
 };
 
 const renderLoggedInNav = (navbarList, user) => {
@@ -62,8 +78,8 @@ const renderLoggedInNav = (navbarList, user) => {
     window.location.href = 'index.html';
   });
 
-  navbarList.appendChild(userItem);
-  navbarList.appendChild(createNavItem(logoutButton));
+  appendNavItem(navbarList, userItem);
+  appendNavItem(navbarList, createNavItem(logoutButton));
 };
 
 const updateNavbarState = () => {
@@ -77,6 +93,8 @@ const updateNavbarState = () => {
 
   const token = localStorage.getItem(AUTH_TOKEN_KEY);
   const user = getStoredUser();
+
+  toggleAdminLink(navbarList, token ? user : null);
 
   if (token) {
     renderLoggedInNav(navbarList, user);

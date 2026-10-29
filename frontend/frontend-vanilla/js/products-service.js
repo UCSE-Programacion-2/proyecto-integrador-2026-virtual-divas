@@ -1,5 +1,5 @@
 const ProductsService = (() => {
-  const API_PRODUCTS_URL = 'http://localhost:3000/api/products';
+  const API_PRODUCTS_URL = `${AppConfig.API_URL}/products`;
   const fallbackImagesByCategory = {
     interior: 'assets/latexinterior.png',
     exterior: 'assets/Pintunort.png',
@@ -33,8 +33,14 @@ const ProductsService = (() => {
 
   const getCategoryLabel = (category) => categoryLabels[category] || category || 'Producto';
 
-  const fetchProducts = async () => {
-    const response = await fetch(API_PRODUCTS_URL);
+  // filters: { q, categoria } (opcionales)
+  const fetchProducts = async (filters = {}) => {
+    const params = new URLSearchParams();
+    Object.entries(filters).forEach(([key, value]) => {
+      if (value) params.set(key, value);
+    });
+    const query = params.toString();
+    const response = await fetch(query ? `${API_PRODUCTS_URL}?${query}` : API_PRODUCTS_URL);
 
     if (!response.ok) {
       throw new Error('No se pudieron obtener los productos');
@@ -53,7 +59,15 @@ const ProductsService = (() => {
     return response.json();
   };
 
+  // Headers con el token guardado en el login (para rutas de admin)
+  const authHeaders = () => {
+    const token = localStorage.getItem('authToken');
+    return token ? { Authorization: `Bearer ${token}` } : {};
+  };
+
   return {
+    API_PRODUCTS_URL,
+    authHeaders,
     escapeHtml,
     fetchProductById,
     fetchProducts,

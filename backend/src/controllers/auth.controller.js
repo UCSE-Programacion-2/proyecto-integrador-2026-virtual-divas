@@ -2,67 +2,78 @@ const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const User = require('../models/User');
 
-const getSecret = () => process.env.JWT_SECRET || 'development-secret';
-
-const serializeUser = (user) => ({
-  id: user._id.toString(),
-  name: user.name,
-  email: user.email,
-});
-
-const createToken = (user) => jwt.sign({ userId: user._id.toString() }, getSecret(), { expiresIn: '7d' });
+const crearToken = (user) =>
+  jwt.sign({ id: user._id, role: user.role }, process.env.JWT_SECRET, {
+    expiresIn: process.env.JWT_EXPIRES_IN || '7d',
+  });
 
 const register = async (req, res) => {
   try {
     const { name, email, password } = req.body;
 
     if (!name || !email || !password) {
-      return res.status(400).json({ message: 'Nombre, email y contraseña son obligatorios' });
+      return res.status(400).json({ mensaje: 'Nombre, email y contraseña son obligatorios' });
     }
 
-    if (password.length < 6) {
-      return res.status(400).json({ message: 'La contraseña debe tener al menos 6 caracteres' });
+    if (String(password).length < 6) {
+      return res.status(400).json({ mensaje: 'La contraseña debe tener al menos 6 caracteres' });
     }
 
-    const normalizedEmail = email.trim().toLowerCase();
-    const existingUser = await User.findOne({ email: normalizedEmail });
-
-    if (existingUser) {
-      return res.status(400).json({ message: 'El email ya está registrado' });
+    const existe = await User.findOne({ email: String(email).toLowerCase().trim() });
+    if (existe) {
+      return res.status(400).json({ mensaje: 'Ya existe una cuenta con ese email' });
     }
 
-    const hashedPassword = await bcrypt.hash(password, 10);
-    const user = await User.create({ name: name.trim(), email: normalizedEmail, password: hashedPassword });
+    const hash = await bcrypt.hash(password, 10);
+    // El rol siempre es "user": los admin se crean con el seed
+    const user = await User.create({ name, email, password: hash, role: 'user' });
 
-    return res.status(201).json({ token: createToken(user), user: serializeUser(user) });
+    return res.status(201).json({
+      mensaje: 'Usuario creado con éxito',
+      token: crearToken(user),
+      user: user.toPublic(),
+    });
   } catch (error) {
-    return res.status(500).json({ message: 'No se pudo crear la cuenta' });
+    if (error.name === 'ValidationError') {
+      return res.status(400).json({ mensaje: error.message });
+    }
+    return res.status(500).json({ mensaje: 'Error al registrar usuario' });
   }
 };
 
 const login = async (req, res) => {
   try {
     const { email, password } = req.body;
-    const user = await User.findOne({ email: email?.trim().toLowerCase() });
 
-    if (!user || !(await bcrypt.compare(password || '', user.password))) {
-      return res.status(401).json({ message: 'Credenciales inválidas' });
+    if (!email || !password) {
+      return res.status(400).json({ mensaje: 'Email y contraseña son obligatorios' });
     }
 
-    return res.json({ token: createToken(user), user: serializeUser(user) });
+    const user = await User.findOne({ email: String(email).toLowerCase().trim() }).select(
+      '+password',
+    );
+    const passwordOk = user && (await bcrypt.compare(password, user.password));
+
+    if (!passwordOk) {
+      return res.status(401).json({ mensaje: 'Email o contraseña incorrectos' });
+    }
+
+    return res.json({ token: crearToken(user), user: user.toPublic() });
   } catch (error) {
-    return res.status(500).json({ message: 'No se pudo iniciar sesión' });
+    return res.status(500).json({ mensaje: 'Error al iniciar sesión' });
   }
 };
 
 const me = async (req, res) => {
-  const user = await User.findById(req.userId);
-
-  if (!user) {
-    return res.status(401).json({ message: 'Sesión inválida' });
+  try {
+    const user = await User.findById(req.user.id);
+    if (!user) {
+      return res.status(404).json({ mensaje: 'Usuario no encontrado' });
+    }
+    return res.json({ user: user.toPublic() });
+  } catch (error) {
+    return res.status(500).json({ mensaje: 'Error al obtener usuario' });
   }
-
-  return res.json({ user: serializeUser(user) });
 };
 
 module.exports = { register, login, me };

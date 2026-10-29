@@ -1,4 +1,11 @@
-const API_PRODUCTS_URL = 'http://localhost:3000/api/products';
+const { API_PRODUCTS_URL } = ProductsService;
+
+// Solo un admin logueado puede usar el panel
+const adminUser = JSON.parse(localStorage.getItem('authUser') || 'null');
+if (!localStorage.getItem('authToken') || adminUser?.role !== 'admin') {
+  window.location.href = 'login.html';
+}
+
 const productForm = document.getElementById('product-form');
 const productsBody = document.getElementById('products-body');
 const productsCount = document.getElementById('products-count');
@@ -104,12 +111,14 @@ const saveProduct = async (productData) => {
     method,
     headers: {
       'Content-Type': 'application/json',
+      ...ProductsService.authHeaders(),
     },
     body: JSON.stringify(productData),
   });
 
   if (!response.ok) {
-    throw new Error('No se pudo guardar el producto');
+    const data = await response.json().catch(() => ({}));
+    throw new Error(data.mensaje || 'No se pudo guardar el producto');
   }
 };
 
@@ -123,7 +132,7 @@ productForm.addEventListener('submit', async (event) => {
     loadProducts();
   } catch (error) {
     console.error(error);
-    showMessage('No se pudo guardar el producto.', 'error');
+    showMessage(error.message || 'No se pudo guardar el producto.', 'error');
   }
 });
 
@@ -153,7 +162,10 @@ productsBody.addEventListener('click', async (event) => {
     }
 
     try {
-      const response = await fetch(`${API_PRODUCTS_URL}/${productId}`, { method: 'DELETE' });
+      const response = await fetch(`${API_PRODUCTS_URL}/${productId}`, {
+        method: 'DELETE',
+        headers: ProductsService.authHeaders(),
+      });
 
       if (!response.ok) {
         throw new Error('No se pudo eliminar el producto');

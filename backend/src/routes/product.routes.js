@@ -8,11 +8,14 @@ const {
   actualizarProducto,
   eliminarProducto,
 } = require('../controllers/product.controller');
+const { verificarToken, soloAdmin } = require('../middlewares/auth.middleware');
 
 router.get('/', obtenerProductos);
 router.get('/:id', obtenerProductoPorId);
-router.post('/', crearProducto);
-router.put('/:id', actualizarProducto);
-router.delete('/:id', eliminarProducto);
+
+// Escritura: solo administradores
+router.post('/', verificarToken, soloAdmin, crearProducto);
+router.put('/:id', verificarToken, soloAdmin, actualizarProducto);
+router.delete('/:id', verificarToken, soloAdmin, eliminarProducto);
 
 module.exports = router;

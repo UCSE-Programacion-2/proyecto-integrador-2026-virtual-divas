@@ -1,0 +1,42 @@
+/* Migrado de frontend-vanilla/404.html */
+.pagina-404 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 60vh;
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.numero-404 {
+  font-size: 120px;
+  font-weight: 700;
+  color: var(--color-secundario);
+  line-height: 1;
+  margin-bottom: 16px;
+}
+
+.titulo-404 {
+  font-size: 28px;
+  font-weight: 600;
+  color: var(--color-texto);
+  margin-bottom: 12px;
+}
+
+.descripcion-404 {
+  font-size: 16px;
+  color: var(--color-texto-secundario);
+  max-width: 400px;
+  margin-bottom: 32px;
+}
+
+@media (max-width: 480px) {
+  .numero-404 {
+    font-size: 80px;
+  }
+
+  .titulo-404 {
+    font-size: 22px;
+  }
+}
