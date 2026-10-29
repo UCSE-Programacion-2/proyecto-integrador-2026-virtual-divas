@@ -1,8 +1,8 @@
 {
   "name": "proyecto-backend",
   "version": "1.0.0",
-  "description": "Configuración para proyectos Backend con Node.js, Express y MongoDB",
-  "main": "server.js",
+  "description": "API REST de PintuNort (Node.js, Express y MongoDB)",
+  "main": "src/server.js",
   "scripts": {
     "start": "node src/server.js",
     "dev": "node --watch src/server.js",
@@ -20,13 +20,15 @@
     "prettier": "^3.2.5"
   },
   "dependencies": {
-    "bcryptjs": "^3.0.3",
+    "bcryptjs": "^2.4.3",
     "cors": "^2.8.6",
     "dotenv": "^17.4.2",
     "express": "^4.22.2",
     "jsonwebtoken": "^9.0.3",
     "mongoose": "^8.0.3",
-    "nodemon": "^3.1.14",
     "swagger-ui-express": "^5.0.1"
+  },
+  "engines": {
+    "node": ">=18"
   }
 }

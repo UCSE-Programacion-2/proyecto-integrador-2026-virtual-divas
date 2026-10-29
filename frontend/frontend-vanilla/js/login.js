@@ -1,4 +1,4 @@
-const API_LOGIN_URL = 'http://localhost:3000/api/auth/login';
+const API_LOGIN_URL = `${AppConfig.API_URL}/auth/login`;
 const loginForm = document.getElementById('login-form');
 const loginButton = document.getElementById('login-button');
 const loginMessage = document.getElementById('login-message');

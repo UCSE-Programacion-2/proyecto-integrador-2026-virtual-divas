@@ -1,4 +1,4 @@
-const API_REGISTER_URL = 'http://localhost:3000/api/auth/register';
+const API_REGISTER_URL = `${AppConfig.API_URL}/auth/register`;
 const registerForm = document.getElementById('register-form');
 const registerButton = document.getElementById('register-button');
 const registerMessage = document.getElementById('register-message');

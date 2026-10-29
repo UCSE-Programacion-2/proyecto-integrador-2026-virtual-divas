@@ -1,8 +1,10 @@
 const mongoose = require('mongoose');
 const dotenv = require('dotenv');
 const path = require('path');
+const bcrypt = require('bcryptjs');
 
 const Producto = require('../src/models/Product');
+const User = require('../src/models/User');
 
 dotenv.config({ path: path.join(__dirname, '../.env') });
 
@@ -113,6 +115,21 @@ const seed = async () => {
     await Producto.deleteMany();
     await Producto.insertMany(productos);
     console.log('✅ 10 productos insertados correctamente');
+
+    // Usuario administrador (se crea o se actualiza, nunca se duplica)
+    const adminEmail = (process.env.ADMIN_EMAIL || 'admin@pintunort.com').toLowerCase();
+    const adminPassword = process.env.ADMIN_PASSWORD || 'admin123';
+    await User.findOneAndUpdate(
+      { email: adminEmail },
+      {
+        name: process.env.ADMIN_NAME || 'Admin PintuNort',
+        email: adminEmail,
+        password: await bcrypt.hash(adminPassword, 10),
+        role: 'admin',
+      },
+      { upsert: true, new: true, runValidators: true },
+    );
+    console.log(`✅ Admin listo: ${adminEmail}`);
   } catch (error) {
     console.error('Error al insertar productos:', error);
     process.exitCode = 1;

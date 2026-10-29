@@ -1,58 +1,65 @@
-# Frontend React
+# Frontend React (Sprint 4)
 
-## Objetivo
-Implementar el mismo producto que en `frontend-vanilla`, pero con React, manteniendo el mismo contrato con el backend.
+SPA de PintuNort hecha con React + Vite + React Router DOM. Consume la misma API que `frontend-vanilla`
+(que se mantiene como referencia del Sprint 3).
 
-## Sprint cubierto
+## Cómo ejecutar
 
-- `docs/sprint-4/`: SPA con React (Vite) + React Router DOM + rutas protegidas + deploy + Demo Day.
+```bash
+cd frontend/frontend-react
+npm install
+cp .env.example .env   # VITE_API_URL=http://localhost:3000/api
+npm run dev            # http://localhost:5173
+npm run build          # build de producción en dist/
+```
 
-## Consigna (React)
+| Variable | Descripción |
+| --- | --- |
+| `VITE_API_URL` | URL base de la API (con `/api` al final). En Vercel se carga en *Environment Variables*. |
 
-- Consumir la misma API del backend (mismos endpoints).
-- Implementar los mismos flujos principales (pantallas y operaciones).
-- Comportamiento equivalente en:
-  - loading
-  - errores del backend
-  - estados vacíos (sin datos)
+## Estructura
 
-## Estructura sugerida
+```
+src/
+  main.jsx               BrowserRouter + AuthProvider + CartProvider
+  App.jsx                rutas públicas, protegidas y de admin
+  services/api.js        cliente HTTP único (token, errores) y endpoints
+  context/
+    AuthContext.jsx      sesión (login, registro, logout, rol)
+    CartContext.jsx      carrito global (localStorage + sincronizado con la API)
+  components/
+    layout/              Navbar, Footer, Layout, ScrollToTop
+    products/            ProductCard, ProductGrid
+    cart/                CartItemRow, QuantityControl, AddToCartButton
+    orders/              OrderSummary
+    admin/               ProductForm, ProductTable, OrdersTable, StatCard
+    auth/                ProtectedRoute (sesión y adminOnly)
+    ui/                  StatusMessage (cargando / error / vacío)
+  pages/                 Home, Catalog, ProductDetail, Login, Register, Cart,
+                         Checkout, OrderSuccess, MyOrders, Admin, NotFound
+  styles/                CSS migrado de frontend-vanilla + estilos nuevos
+  utils/                 formato de precios, categorías, propTypes
+```
 
-Orientativa (adapten al template que usen, por ejemplo Vite):
+## Rutas
 
-- `src/`
-  - `main.jsx`
-  - `App.jsx` (rutas/navegación)
-  - `api/` o `services/` (cliente para consumir endpoints)
-  - `pages/` (pantallas)
-  - `components/` (componentes reutilizables)
-  - `styles/` (estilos)
-  - `utils/` (helpers)
-
-## Configuración
-
-Documentá cómo setear la URL del backend:
-
-- ejemplo: `VITE_API_URL` (si usan Vite)
-- o una constante en `src/config.js`
-
-## Ejecución
-
-En este README tenés que incluir:
-
-1. `npm install`
-2. `npm run dev` (o comando equivalente)
-3. Variables necesarias (si aplica)
+| Ruta | Pantalla | Acceso |
+| --- | --- | --- |
+| `/` | Home (banner, búsqueda, categorías, destacados) | público |
+| `/catalogo?q=&categoria=` | Catálogo con búsqueda y filtros | público |
+| `/producto/:id` | Detalle | público |
+| `/login`, `/registro` | Formularios controlados | público |
+| `/carrito` | Carrito | público |
+| `/checkout` | Simular compra | con sesión |
+| `/compra/:id` | Confirmación del pedido | con sesión |
+| `/mis-compras` | Historial | con sesión |
+| `/admin` | Dashboard + CRUD de productos + pedidos | solo rol `admin` |
+| `*` | 404 | público |
 
 ## Checklist
 
-- [ ] La UI refleja el estado de la API (loading/error/empty).
-- [ ] La navegación cubre el flujo completo.
-- [ ] Se mantiene paridad con `frontend-vanilla` (mismo comportamiento funcional).
-
-## Criterios clave (según el enunciado)
-
-- React Router DOM (SPA sin recargas al navegar).
-- Componentización (Navbar, ProductCard, Footer, etc.).
-- Rutas protegidas para admin (solo si el usuario tiene rol).
-
+- [x] La UI refleja el estado de la API (loading/error/empty) con `StatusMessage`.
+- [x] SPA sin recargas (React Router DOM) y rewrite para producción (`vercel.json` / `public/_redirects`).
+- [x] Componentes con props validadas (PropTypes).
+- [x] `useState` en formularios, `useEffect` para los fetch, Context API para sesión y carrito.
+- [x] Ruta protegida de admin.

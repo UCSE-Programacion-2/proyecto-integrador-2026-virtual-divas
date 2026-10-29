@@ -31,123 +31,33 @@
       <div class="container catalog-layout">
         <aside class="card filters-panel">
           <h2>Filtros</h2>
-          <p class="filters-text">Opciones visuales para ordenar la búsqueda.</p>
-
-          <div class="filter-group">
-            <h3>Categoría</h3>
-            <label><input type="checkbox" checked /> Pintura interior</label>
-            <label><input type="checkbox" /> Pintura exterior</label>
-            <label><input type="checkbox" /> Impermeabilizantes</label>
-            <label><input type="checkbox" /> Accesorios</label>
-          </div>
-
-          <div class="filter-group">
-            <h3>Marca</h3>
-            <label><input type="checkbox" /> Polarcrin</label>
-            <label><input type="checkbox" /> Polacrin</label>
-            <label><input type="checkbox" /> Sinteplast</label>
-            <label><input type="checkbox" /> PintuNort</label>
-          </div>
-
-          <div class="filter-group">
-            <h3>Precio</h3>
-            <label><input type="radio" name="precio" /> Hasta $5.000</label>
-            <label><input type="radio" name="precio" checked /> $5.000 a $15.000</label>
-            <label><input type="radio" name="precio" /> Más de $15.000</label>
-          </div>
-
-          <button type="button" class="button button-secondary filters-button">
-            Limpiar filtros
-          </button>
+          <p class="filters-text">Buscá por nombre o marca y filtrá por categoría.</p>
+          <form id="catalog-filters">
+            <div class="filter-group">
+              <h3>Buscar</h3>
+              <input type="search" id="catalog-search" name="q" placeholder="Ej: látex, Alba" />
+            </div>
+            <div class="filter-group">
+              <h3>Categoría</h3>
+              <label><input type="radio" name="categoria" value="" checked /> Todas</label>
+              <label><input type="radio" name="categoria" value="interior" /> Pintura interior</label>
+              <label><input type="radio" name="categoria" value="exterior" /> Pintura exterior</label>
+              <label><input type="radio" name="categoria" value="esmalte" /> Esmaltes</label>
+              <label><input type="radio" name="categoria" value="accesorio" /> Accesorios</label>
+            </div>
+            <button type="reset" class="button button-secondary filters-button">Limpiar filtros</button>
+          </form>
         </aside>
-
         <section class="catalog-products">
           <div class="catalog-header">
             <div>
               <h2>Productos disponibles</h2>
-              <p>Grilla visual de productos cargados para Sprint 1.</p>
+              <p>Datos actualizados desde la API de PintuNort.</p>
             </div>
-            <span class="catalog-count">6 productos</span>
+            <span class="catalog-count" id="catalog-count">0 productos</span>
           </div>
-
-          <div class="catalog-products-grid">
-            <article class="card catalog-card">
-              <div class="catalog-image">
-                <img src="assets/latexinterior.png" alt="Latex Interior" />
-              </div>
-              <div class="catalog-info">
-                <p class="catalog-brand">Polarcrin</p>
-                <h3>Latex Interior</h3>
-                <p class="catalog-description">Pintura mate para paredes interiores.</p>
-                <p class="catalog-price">$15.200</p>
-                <a href="detalle.html" class="button button-primary">Ver detalle</a>
-              </div>
-            </article>
-
-            <article class="card catalog-card">
-              <div class="catalog-image">
-                <img src="assets/membrana.png" alt="Membrana en Pasta" />
-              </div>
-              <div class="catalog-info">
-                <p class="catalog-brand">Polacrin</p>
-                <h3>Membrana en Pasta</h3>
-                <p class="catalog-description">Impermeabilizante para techos y terrazas.</p>
-                <p class="catalog-price">$12.500</p>
-                <a href="detalle.html" class="button button-primary">Ver detalle</a>
-              </div>
-            </article>
-
-            <article class="card catalog-card">
-              <div class="catalog-image">
-                <img src="assets/Pinturavalen.png" alt="Microcemento en Pasta" />
-              </div>
-              <div class="catalog-info">
-                <p class="catalog-brand">Valen</p>
-                <h3>Microcemento en Pasta</h3>
-                <p class="catalog-description">Revestimiento decorativo listo para aplicar.</p>
-                <p class="catalog-price">$8.900</p>
-                <a href="detalle.html" class="button button-primary">Ver detalle</a>
-              </div>
-            </article>
-
-            <article class="card catalog-card">
-              <div class="catalog-image">
-                <img src="assets/Tonplast.png" alt="Entonador Universal" />
-              </div>
-              <div class="catalog-info">
-                <p class="catalog-brand">Sinteplast</p>
-                <h3>Entonador Universal</h3>
-                <p class="catalog-description">Colorante para pinturas al agua y sintéticas.</p>
-                <p class="catalog-price">$2.400</p>
-                <a href="detalle.html" class="button button-primary">Ver detalle</a>
-              </div>
-            </article>
-
-            <article class="card catalog-card">
-              <div class="catalog-image">
-                <img src="assets/Pintunort.png" alt="Pintura Exterior Premium" />
-              </div>
-              <div class="catalog-info">
-                <p class="catalog-brand">PintuNort</p>
-                <h3>Pintura Exterior Premium</h3>
-                <p class="catalog-description">Pintura resistente para fachadas.</p>
-                <p class="catalog-price">$18.700</p>
-                <a href="detalle.html" class="button button-primary">Ver detalle</a>
-              </div>
-            </article>
-
-            <article class="card catalog-card">
-              <div class="catalog-image">
-                <img src="assets/latexinterior.png" alt="Latex Antihongo" />
-              </div>
-              <div class="catalog-info">
-                <p class="catalog-brand">Polarcrin</p>
-                <h3>Latex Antihongo</h3>
-                <p class="catalog-description">Ideal para baños, cocinas y ambientes húmedos.</p>
-                <p class="catalog-price">$16.300</p>
-                <a href="detalle.html" class="button button-primary">Ver detalle</a>
-              </div>
-            </article>
+          <div class="catalog-products-grid" id="catalog-grid">
+            <p class="catalog-message">Cargando productos...</p>
           </div>
         </section>
       </div>
@@ -180,6 +90,9 @@
         </div>
       </div>
     </footer>
+    <script src="js/config.js"></script>
+    <script src="js/products-service.js"></script>
+    <script src="js/catalog-products.js"></script>
     <script src="js/navbar-state.js"></script>
   </body>
 </html>

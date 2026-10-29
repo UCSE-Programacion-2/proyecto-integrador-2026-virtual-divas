@@ -1,0 +1,69 @@
+/* Grilla y tarjeta de producto compartidas (Home y Catálogo) */
+.products-grid {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+}
+
+.catalog-card {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.catalog-image {
+  background-color: #e8e8e8;
+  display: block;
+  height: 180px;
+}
+
+.catalog-image img {
+  height: 100%;
+  object-fit: cover;
+  width: 100%;
+}
+
+.catalog-info {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  padding: 16px;
+}
+
+.catalog-brand {
+  color: var(--color-text-muted);
+  font-size: 12px;
+  margin-bottom: 4px;
+  text-transform: uppercase;
+}
+
+.catalog-info h3 {
+  color: var(--color-text);
+  font-size: var(--font-size-base);
+  margin-bottom: 8px;
+}
+
+.catalog-description {
+  color: var(--color-text-muted);
+  font-size: var(--font-size-sm);
+  margin-bottom: 12px;
+}
+
+.catalog-price {
+  color: var(--color-secondary);
+  font-size: 20px;
+  font-weight: var(--font-weight-bold);
+  margin-bottom: 12px;
+  margin-top: auto;
+}
+
+.product-card-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.product-card-actions .button {
+  flex: 1;
+  font-size: var(--font-size-sm);
+  padding: 10px;
+}

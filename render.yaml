@@ -1,0 +1,23 @@
+# Blueprint de Render para el backend (Render > New > Blueprint > elegir este repo)
+services:
+  - type: web
+    name: pintunort-api
+    runtime: node
+    rootDir: backend
+    plan: free
+    buildCommand: npm install
+    startCommand: npm start
+    healthCheckPath: /api/health
+    envVars:
+      - key: MONGODB_URI
+        sync: false # se carga a mano en Render (string de MongoDB Atlas)
+      - key: JWT_SECRET
+        generateValue: true
+      - key: JWT_EXPIRES_IN
+        value: 7d
+      - key: CORS_ORIGIN
+        sync: false # URL del frontend en Vercel, ej: https://pintunort.vercel.app
+      - key: ADMIN_EMAIL
+        value: admin@pintunort.com
+      - key: ADMIN_PASSWORD
+        sync: false
