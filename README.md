@@ -8,10 +8,10 @@ compra simulada, cuentas de usuario y panel de administración.
 | | URL |
 | --- | --- |
 | Frontend (React, Vercel) | https://pintunort.vercel.app ← reemplazar por la URL real |
-| Backend (API, Render) | https://pintunort-api.onrender.com/api/health ← reemplazar |
+| Backend (API, Render) | https://pintunort-api.onrender.com/api/health |
 | Documentación de la API | https://pintunort-api.onrender.com/api-docs |
 | Frontend vanilla (Sprint 3, GitHub Pages) | https://ucse-programacion-2.github.io/proyecto-integrador-2026-virtual-divas/ |
-| Video de respaldo | Próximamente |
+| Video de respaldo | (https://drive.google.com/file/d/1prXp4NIXgz-Q7dlBN8HwcFO41-aJWaYO/view?usp=drive_link) |
 
 Usuario admin para la demo: `admin@pintunort.com` (la contraseña la tiene el equipo).
 
